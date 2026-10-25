@@ -264,6 +264,7 @@ function render() {
 
   $('#vTitle').textContent = p.title;
   $('#vLink').href = p.url;
+  $('#vBuild').textContent = p.build || '';
 
   const tabs = $('#vTabs');
   tabs.innerHTML = '';
