@@ -5,7 +5,7 @@ const PROJECTS = [
     slug: 'ashford-homes-ohio',
     title: 'Ashford Homes Ohio',
     category: 'Real estate',
-    build: '',
+    build: 'Figma to WordPress',
     url: 'https://www.ashfordhomesohio.com/',
     pages: [
       ['Homepage', 'homepage'],
@@ -18,7 +18,7 @@ const PROJECTS = [
     slug: 'jk-custom-homes',
     title: 'J&K Custom Homes',
     category: 'Home builder',
-    build: '',
+    build: 'Wix to WordPress',
     url: 'https://www.jkcustomhomes.net/',
     pages: [
       ['Homepage', 'homepage'],
@@ -31,7 +31,7 @@ const PROJECTS = [
     slug: 'futurethink',
     title: 'Futurethink',
     category: 'Business website',
-    build: '',
+    build: 'Figma to WordPress',
     url: 'https://futurethink.com/navigate-change/',
     pages: [
       ['Navigate Change', 'navigate-change']
@@ -41,7 +41,7 @@ const PROJECTS = [
     slug: 'golden-boy-branding',
     title: 'Golden Boy Branding',
     category: 'Business website',
-    build: '',
+    build: 'Figma to WordPress',
     url: 'https://staging-3067-huntore4ab5f5721-sfnrt.wpcomstaging.com/services/promotional-products/',
     pages: [
       ['Promotional Products', 'promotional-products'],
