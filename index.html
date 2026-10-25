@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Merie Jane Lamata | WordPress &amp; Elementor developer</title>
 <meta name="description" content="Web developer building business sites, landing pages and stores with WordPress, Elementor, HTML, CSS and JavaScript.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1B1F2B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
@@ -16,7 +18,10 @@
 
 <nav class="navbar navbar-expand-lg site-nav" data-bs-theme="dark">
   <div class="container">
-    <a class="brand" href="#top">Merie Jane</a>
+    <!-- LOGO: edit this SVG, or replace it with <img src="assets/logo.png" height="34" alt="Merie Jane"> -->
+    <a class="brand" href="#top" aria-label="Merie Jane, home">
+      <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8"/><path d="M6 23V9l5 7 5-7v14"/><path d="M23 9v9a4 4 0 0 1-4 4"/></svg>
+      <span>Merie Jane</span></a>
     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Menu"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse justify-content-end" id="mainNav">
       <ul class="navbar-nav gap-lg-3">
@@ -88,7 +93,7 @@
   <div class="container">
     <h2>Projects</h2>
     <p class="sub">Hover a card to preview the page scrolling. Open it to view every page I built.</p>
-    <div class="row g-4" id="workGrid"></div>
+    <div class="work-scroll" id="workScroll"><div class="row g-4" id="workGrid"></div></div>
     <div class="text-center mt-5"><button class="btn-line d-none" id="moreBtn">View more projects</button></div>
   </div>
 </section>
@@ -139,7 +144,9 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg></a>
       </div>
     </div>
-    <div class="foot-line"><span>&copy; <span id="yr"></span> Merie Jane C. Lamata</span><a href="#" target="_blank" rel="noopener">Upwork</a></div>
+    <div class="foot-line"><span>&copy; <span id="yr"></span> Merie Jane C. Lamata</span><nav class="foot-links" aria-label="Other ways to reach me">
+        <a href="#" target="_blank" rel="noopener">Upwork</a>
+      </nav></div>
   </div>
 </footer>
 
