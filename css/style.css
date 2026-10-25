@@ -252,3 +252,13 @@ html[data-theme=light] .sun, html:not([data-theme=light]) .moon { color: #12151D
 [data-theme=light] .folder:not(.next):not(.soon):focus-within { --f-bg: #343945; --f-fg: #E1DBCB; --f-mute: #A9B4BF; --f-line: #66778A }
 [data-theme=light] .soon-img { color: #9DAAB7; border-color: #4D5E70 }
 
+
+.hero-view { flex: 1; min-height: 0; overflow: hidden; background: #fff }
+.hero-roll img { width: 100%; display: block }
+.hero-roll .ph { height: 900px }
+.hero-roll.roll { animation: heroScroll var(--t, 14s) ease-in-out infinite }
+@keyframes heroScroll {
+  0%, 12% { transform: none }
+  50%, 62% { transform: translateY(calc(-1 * var(--d))) }
+  100% { transform: none }
+}
