@@ -6,6 +6,21 @@ const PROJECTS = [
     pages: [['Homepage', 'homepage'], ['Custom Home Builder', 'custom-home-builder'], ['Areas We Build', 'areas-we-build'], ['Homes For Sale', 'homes-for-sale']] },
   { slug: 'futurethink', title: 'Futurethink', category: 'Business website', url: 'https://futurethink.com/navigate-change/',
     pages: [['Navigate Change', 'navigate-change']] }
+{
+  slug: 'golden-boy-branding',
+  title: 'Golden Boy Branding',
+  category: 'Business website',
+  url: 'https://staging-3067-huntore4ab5f5721-sfnrt.wpcomstaging.com/services/promotional-products/',
+  pages: [
+    ['Promotional Products', 'promotional-products'],
+    ['Embroidery', 'embroidery'],
+    ['Our Process', 'our-process'],
+    ['Trade Show Materials', 'trade-show-materials']
+    ['Location Landing Page', 'location-landing-page']
+    ['Locations Single Pages Sample', 'location-single-pages-sample']
+  ]
+}
+  
 ];
 // Pages shown in the slanted grid: [project index, page index]
 const TILTED = [[0, 0], [1, 0], [0, 2], [1, 3], [2, 0], [1, 2]];
