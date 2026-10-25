@@ -75,6 +75,18 @@ const PROJECTS = [
       ['Accessibility', 'accessibility'],
       ['Sitemap', 'sitemap']
     ]
+  },
+    {
+    slug: 'dd-law-stage',
+    title: 'DD Law Stage',
+    category: 'Law firm',
+    build: 'Figma to WordPress',
+    url: 'https://ddlawstage.wpenginepowered.com/langley-lawyers-help/',
+    pages: [
+      ['Criminal Lawyer Surrey', 'criminal-lawyer-surrey'],
+      ['Immigration Lawyers in Surrey', 'immigration-lawyers-in-surrey'],
+      ['Lawyer Help', 'lawyer-help'],
+    ]
   }
 ];
 
