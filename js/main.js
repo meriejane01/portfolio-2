@@ -56,8 +56,8 @@ const PROJECTS = [
     slug: 'josh-and-harrison',
     title: 'Josh and Harrison',
     category: 'Speaker website',
-    build: '',
-    url: '',
+    build: 'Figma to WordPress',
+    url: 'https://joshandharrison.com/industries/',
     pages: [
       ['Industries We Serve', 'industries-we-serve'],
       ['Contact', 'contact']
