@@ -70,7 +70,7 @@ const TILTED = [
   [0, 0],   // Ashford Homes Ohio: Homepage
   [1, 0],   // J&K Custom Homes: Homepage
   [3, 1],   // Golden Boy: Embroidery
-  [4, 0]    // Josh and Harrison: Industries We Serve
+  [4, 0],    // Josh and Harrison: Industries We Serve
   [2, 0],   // Futurethink: Navigate Change
   [1, 2]    // J&K Custom Homes: Areas We Build
 ];
