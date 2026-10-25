@@ -99,6 +99,16 @@ const PROJECTS = [
       ['Criminal Lawyer Surrey', 'criminal-lawyer-surrey'],
       ['Immigration Lawyers in Surrey', 'immigration-lawyers-in-surrey']
     ]
+  },
+    {
+    slug: 'avenir',
+    title: 'Avenir',
+    category: 'Business website',
+    build: 'Figma to WordPress',
+    url: '',
+    pages: [
+      ['Our Project', 'our-project']
+    ]
   }
 ];
 
