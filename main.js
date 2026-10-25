@@ -9,7 +9,7 @@ const PROJECTS = [
 ];
 // Pages shown in the slanted grid: [project index, page index]
 const TILTED = [[0, 0], [1, 0], [0, 2], [1, 3], [2, 0], [1, 2]];
-const PAGE_SIZE = 12, EXTS = ['jpg', 'png', 'webp'];
+const PAGE_SIZE = 4, SCROLL_AFTER = 12, EXTS = ['jpg', 'png', 'webp'];
 const $ = (s, r = document) => r.querySelector(s);
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 
@@ -59,16 +59,34 @@ PROJECTS.forEach((p, pi) => {
   col.querySelectorAll('.pgs button').forEach(b => b.onclick = () => openViewer(pi, +b.dataset.g));
   grid.append(col);
 });
+// Placeholder cards so you can see where new projects go.
+// Set PLACEHOLDER_SLOTS to 0 to remove them. Each real project you add replaces one placeholder.
+const PLACEHOLDER_SLOTS = 13;
+for (let i = PROJECTS.length; i < PLACEHOLDER_SLOTS; i++) {
+  const col = document.createElement('div');
+  col.className = 'col-12 col-sm-6 col-lg-3 item';
+  col.innerHTML = `<article class="folder soon" aria-hidden="true"><div class="f-cover"><span class="f-shot"><span class="soon-img">Project screenshot</span></span></div>
+    <div class="f-body"><h3>Project name</h3><p class="cat">Category</p>
+    <ul class="pgs"><li><button tabindex="-1">Page</button></li><li><button tabindex="-1">Page</button></li></ul><span class="live">Visit live site</span></div></article>`;
+  grid.append(col);
+}
 const nextCard = document.createElement('div');
 nextCard.className = 'col-12 col-sm-6 col-lg-3 item';
 nextCard.innerHTML = '<a class="folder next" href="#contact"><span><b>Your project next</b>Tell me what you need built.</span></a>';
 grid.append(nextCard);
 
-// View more (4 per row, 12 shown first)
-const items = [...grid.children], more = $('#moreBtn');
+// View more: 4 shown first, 4 more per click; past 12 the list gets a scrollbar
+const items = [...grid.children], more = $('#moreBtn'), wrap = $('#workScroll');
 let shown = PAGE_SIZE;
-function paint() { items.forEach((el, i) => el.classList.toggle('d-none', i >= shown)); more.classList.toggle('d-none', shown >= items.length); }
-more.onclick = () => { shown += PAGE_SIZE; paint(); };
+function paint() {
+  items.forEach((el, i) => el.classList.toggle('d-none', i >= shown));
+  more.classList.toggle('d-none', shown >= items.length);
+  wrap.classList.toggle('scroll', shown > SCROLL_AFTER);
+}
+more.onclick = () => {
+  const first = shown; shown += PAGE_SIZE; paint();
+  if (wrap.classList.contains('scroll') && items[first]) wrap.scrollTo({ top: items[first].offsetTop - 8, behavior: 'smooth' });
+};
 paint();
 
 // Page viewer
