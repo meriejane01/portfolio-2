@@ -51,6 +51,17 @@ const PROJECTS = [
       ['Location Landing Page', 'location-landing-page'],
       ['Locations Single Pages Sample', 'location-single-pages-sample']
     ]
+  },
+    {
+    slug: 'josh-and-harrison',
+    title: 'Josh and Harrison',
+    category: 'Speaker website',
+    build: '',
+    url: '',
+    pages: [
+      ['Industries We Serve', 'industries-we-serve'],
+      ['Contact', 'contact']
+    ]
   }
 ];
 
