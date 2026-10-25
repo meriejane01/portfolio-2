@@ -67,8 +67,8 @@ const PROJECTS = [
     slug: 'baker-it',
     title: 'Baker IT',
     category: 'Business website',
-    build: '',
-    url: '',
+    build: 'Figma to WordPress',
+    url: 'https://bakeritsolutions.com/',
     pages: [
       ['Homepage', 'homepage'],
       ['Privacy Policy', 'privacy-policy'],
