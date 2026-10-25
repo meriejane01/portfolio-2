@@ -56,12 +56,12 @@ const PROJECTS = [
 
 // Pages shown in the slanted grid: [project index, page index]
 const TILTED = [
-  [0, 0],
-  [1, 0],
-  [0, 2],
-  [1, 3],
-  [2, 0],
-  [1, 2]
+  [0, 0],   // Ashford Homes Ohio: Homepage
+  [1, 0],   // J&K Custom Homes: Homepage
+  [3, 1],   // Golden Boy: Embroidery
+  [1, 3],   // J&K Custom Homes: Homes For Sale
+  [2, 0],   // Futurethink: Navigate Change
+  [1, 2]    // J&K Custom Homes: Areas We Build
 ];
 
 const PAGE_SIZE = 4, SCROLL_AFTER = 12, EXTS = ['jpg', 'jpeg', 'png', 'webp'];
