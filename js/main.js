@@ -105,7 +105,7 @@ const PROJECTS = [
     title: 'Avenir',
     category: 'Business website',
     build: 'Figma to WordPress',
-    url: '',
+    url: 'https://avenirmozambique.com/our-project/',
     pages: [
       ['Our Project', 'our-project']
     ]
