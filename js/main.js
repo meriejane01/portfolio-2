@@ -120,7 +120,7 @@ PROJECTS.forEach((p, pi) => {
 
   col.innerHTML = `<article class="folder">
     <button class="f-cover" aria-label="Open ${esc(p.title)} pages"><span class="f-shot"><span class="f-scroll"></span></span></button>
-    <div class="f-body"><div class="f-title"><h3>${esc(p.title)}</h3>${p.build ? `<span class="build">${esc(p.build)}</span>` : ''}</div><p class="cat">${esc(p.category)}</p>
+    <div class="f-body"><h3>${esc(p.title)}</h3><p class="cat">${esc(p.category)}</p>
     <ul class="pgs">${p.pages.map((g, gi) => `<li><button data-g="${gi}">${esc(g[0])}</button></li>`).join('')}</ul>
     <a class="live" href="${p.url}" target="_blank" rel="noopener">Visit live site</a></div></article>`;
 
