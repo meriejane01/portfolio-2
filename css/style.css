@@ -246,3 +246,7 @@ html[data-theme=light] .sun, html:not([data-theme=light]) .moon { color: #12151D
 [data-theme=light] .folder:not(.next):not(.soon):hover,
 [data-theme=light] .folder:not(.next):not(.soon):focus-within { --f-bg: #343945; --f-fg: #E1DBCB; --f-mute: #A9B4BF; --f-line: #66778A }
 [data-theme=light] .soon-img { color: #9DAAB7; border-color: #4D5E70 }
+
+.v-build { font-size: .9rem; font-weight: 500; color: var(--mist); white-space: nowrap }
+.v-build::before { content: "\2022"; margin-right: .4rem }
+.v-build:empty { display: none }
