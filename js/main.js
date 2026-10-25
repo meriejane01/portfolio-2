@@ -1,5 +1,6 @@
 // Projects. Screenshots go in assets/projects/<slug>/<page-slug>-desktop.jpg and -mobile.jpg
 // build: choose 'Figma to WordPress', 'HTML to WordPress' or 'Wix to WordPress'. Leave '' to show nothing.
+// TIP: add new projects at the END of this list so the numbers in TILTED never shift.
 const PROJECTS = [
   {
     slug: 'ashford-homes-ohio',
@@ -27,7 +28,7 @@ const PROJECTS = [
       ['Homes For Sale', 'homes-for-sale']
     ]
   },
-    {
+  {
     slug: 'staying-dangerous',
     title: 'Staying Dangerous',
     category: 'Business website',
@@ -63,7 +64,7 @@ const PROJECTS = [
       ['Locations Single Pages Sample', 'location-single-pages-sample']
     ]
   },
-    {
+  {
     slug: 'josh-and-harrison',
     title: 'Josh and Harrison',
     category: 'Speaker website',
@@ -74,7 +75,7 @@ const PROJECTS = [
       ['Contact', 'contact']
     ]
   },
-    {
+  {
     slug: 'baker-it',
     title: 'Baker IT',
     category: 'Business website',
@@ -87,7 +88,7 @@ const PROJECTS = [
       ['Sitemap', 'sitemap']
     ]
   },
-    {
+  {
     slug: 'dd-law-stage',
     title: 'DD Law Stage',
     category: 'Law firm',
@@ -101,14 +102,16 @@ const PROJECTS = [
   }
 ];
 
-// Pages shown in the slanted grid: [project index, page index]
+// Pages shown in the slanted grid: [project number, page number], counting from 0.
+// Project numbers: 0 Ashford, 1 J&K, 2 Staying Dangerous, 3 Futurethink,
+// 4 Golden Boy, 5 Josh and Harrison, 6 Baker IT, 7 DD Law Stage
 const TILTED = [
   [0, 0],   // Ashford Homes Ohio: Homepage
   [1, 0],   // J&K Custom Homes: Homepage
-  [3, 1],   // Golden Boy: Embroidery
-  [4, 0],    // Josh and Harrison: Industries We Serve
-  [2, 0],   // Futurethink: Navigate Change
-  [1, 2]    // J&K Custom Homes: Areas We Build
+  [4, 1],   // Golden Boy: Embroidery
+  [5, 0],   // Josh and Harrison: Industries We Serve
+  [3, 0],   // Futurethink: Navigate Change
+  [2, 0]    // Staying Dangerous: Skill Soft
 ];
 
 const PAGE_SIZE = 4, SCROLL_AFTER = 12, EXTS = ['jpg', 'jpeg', 'png', 'webp'];
@@ -146,7 +149,8 @@ function shot(p, pg, dev) {
 const tilt = $('#tiltGrid');
 
 TILTED.forEach(([pi, gi]) => {
-  const p = PROJECTS[pi], pg = p.pages[gi];
+  const p = PROJECTS[pi], pg = p && p.pages[gi];
+  if (!pg) return;   // a wrong number skips that card instead of breaking the site
   const b = document.createElement('button');
 
   b.className = 'tilt-card';
