@@ -27,6 +27,17 @@ const PROJECTS = [
       ['Homes For Sale', 'homes-for-sale']
     ]
   },
+    {
+    slug: 'staying-dangerous',
+    title: 'Staying Dangerous',
+    category: 'Business website',
+    build: 'Figma to WordPress',
+    tools: [],
+    url: 'https://stayingdangerous.co/skillsoft/',
+    pages: [
+      ['Skill Soft', 'skill-soft']
+    ]
+  },
   {
     slug: 'futurethink',
     title: 'Futurethink',
