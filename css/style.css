@@ -237,8 +237,13 @@ html[data-theme=light] .sun, html:not([data-theme=light]) .moon { color: #12151D
 }
 
 /* build type next to the project title */
-.f-title { display: flex; align-items: baseline; flex-wrap: wrap; gap: .2rem .6rem }
-.build { font-size: .72rem; font-weight: 600; padding: .1rem .55rem; border-radius: 99px; border: 1px solid var(--f-line); color: var(--f-mute); white-space: nowrap }
+.v-build { margin-left: auto; font-size: .85rem; font-weight: 500; color: var(--mist); border: 1px solid var(--slate); border-radius: 99px; padding: .35rem .9rem; white-space: nowrap }
+.v-build + .v-dev { margin-left: 0 }
+.v-build:empty { display: none }
+@media (max-width: 575.98px) {
+  .v-head { flex-wrap: wrap }
+  .v-build { order: 5; margin-left: 0 }
+}
 .more-pill button { border-style: dashed }
 
 /* light theme: black folders, faded black on hover */
@@ -247,6 +252,3 @@ html[data-theme=light] .sun, html:not([data-theme=light]) .moon { color: #12151D
 [data-theme=light] .folder:not(.next):not(.soon):focus-within { --f-bg: #343945; --f-fg: #E1DBCB; --f-mute: #A9B4BF; --f-line: #66778A }
 [data-theme=light] .soon-img { color: #9DAAB7; border-color: #4D5E70 }
 
-.v-build { font-size: .9rem; font-weight: 500; color: var(--mist); white-space: nowrap }
-.v-build::before { content: "\2022"; margin-right: .4rem }
-.v-build:empty { display: none }
