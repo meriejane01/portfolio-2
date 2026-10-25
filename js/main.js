@@ -85,8 +85,7 @@ const PROJECTS = [
     pages: [
       ['Lawyer Help', 'lawyer-help'],
       ['Criminal Lawyer Surrey', 'criminal-lawyer-surrey'],
-      ['Immigration Lawyers in Surrey', 'immigration-lawyers-in-surrey'],
-      ['Commercial Civil Litigation Lawyer', 'commercial-civil-litigation-lawyer']
+      ['Immigration Lawyers in Surrey', 'immigration-lawyers-in-surrey']
     ]
   }
 ];
