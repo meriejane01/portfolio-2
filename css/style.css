@@ -117,19 +117,25 @@ section { position: relative; padding: 6.5rem 0; overflow: hidden }
 .work-scroll.scroll::-webkit-scrollbar-track { background: rgba(125, 140, 155, .25); border-radius: 99px }
 .work-scroll.scroll::-webkit-scrollbar-thumb { background: var(--slate); border-radius: 99px }
 
-.folder { position: relative; display: flex; flex-direction: column; margin-top: 16px; background: var(--ink); border-radius: 0 16px 16px 16px; height: calc(100% - 16px) }
-.folder::before { content: ""; position: absolute; left: 0; top: -16px; width: 44%; height: 18px; background: var(--ink); border-radius: 10px 10px 0 0 }
+.folder { --f-bg: var(--ink); --f-fg: var(--cream); --f-mute: var(--mist); --f-line: var(--slate);
+  position: relative; display: flex; flex-direction: column; margin-top: 16px; height: calc(100% - 16px);
+  background: var(--f-bg); color: var(--f-fg); border-radius: 0 16px 16px 16px; transition: background .3s, color .3s }
+/* hover: the card flips to the opposite tone (light in dark mode, dark in light mode) */
+.folder:not(.next):not(.soon):hover, .folder:not(.next):not(.soon):focus-within {
+  --f-bg: var(--cream); --f-fg: var(--ink);
+  --f-mute: color-mix(in srgb, var(--ink) 65%, var(--cream)); --f-line: color-mix(in srgb, var(--ink) 40%, transparent) }
+.folder::before { content: ""; position: absolute; left: 0; top: -16px; width: 44%; height: 18px; background: var(--f-bg); border-radius: 10px 10px 0 0; transition: background .3s }
 .f-cover { display: block; width: 100%; padding: 10px 10px 0; border: 0; background: none }
 .f-shot { display: block; height: 170px; overflow: hidden; border-radius: 10px; background: #222836 }
 .f-scroll { display: block; transition: transform linear }
 .f-scroll img { width: 100%; display: block }
 .f-body { flex: 1; display: flex; flex-direction: column; padding: 1rem 1.1rem 1.2rem }
 .f-body h3 { font-size: 1.3rem; margin: 0 }
-.cat { color: var(--mist); font-size: .88rem; margin: .1rem 0 .7rem }
+.cat { color: var(--f-mute); transition: color .3s; font-size: .88rem; margin: .1rem 0 .7rem }
 .pgs { list-style: none; padding: 0; margin: 0 0 .9rem; display: flex; flex-wrap: wrap; gap: .35rem }
-.pgs button { background: none; color: var(--cream); border: 1px solid var(--slate); border-radius: 99px; padding: .1rem .65rem; font-size: .78rem }
-.pgs button:hover { background: var(--slate) }
-.live { margin-top: auto; align-self: flex-start; font-size: .9rem; font-weight: 600; color: var(--cream) }
+.pgs button { background: none; color: var(--f-fg); border: 1px solid var(--f-line); border-radius: 99px; padding: .1rem .65rem; font-size: .78rem }
+.pgs button:hover { background: color-mix(in srgb, var(--f-fg) 14%, transparent) }
+.live { margin-top: auto; align-self: flex-start; font-size: .9rem; font-weight: 600; color: var(--f-fg) }
 
 /* "your project next" card and placeholder cards */
 .folder.next { background: none; border: 1.5px dashed var(--slate); display: grid; place-items: center; text-align: center; padding: 2rem 1rem; min-height: 300px; color: var(--mist); text-decoration: none }
