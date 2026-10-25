@@ -62,6 +62,19 @@ const PROJECTS = [
       ['Industries We Serve', 'industries-we-serve'],
       ['Contact', 'contact']
     ]
+  },
+    {
+    slug: 'baker-it',
+    title: 'Baker IT',
+    category: 'Business website',
+    build: '',
+    url: '',
+    pages: [
+      ['Homepage', 'homepage'],
+      ['Privacy Policy', 'privacy-policy'],
+      ['Accessibility', 'accessibility'],
+      ['Sitemap', 'sitemap']
+    ]
   }
 ];
 
