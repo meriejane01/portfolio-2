@@ -430,3 +430,31 @@ setTheme(root.dataset.theme === 'light' ? 'light' : 'dark', false);
 tt.onclick = () => {
   setTheme(root.dataset.theme === 'light' ? 'dark' : 'light', true);
 };
+
+
+// Hero monitor: shows assets/hero-website.jpg (or .jpeg, .png, .webp)
+const heroRoll = $('#heroRoll'), heroView = $('#heroView');
+(function () {
+  let i = 0;
+  const img = new Image();
+  img.alt = 'A website I built, shown on a desktop screen';
+  img.decoding = 'async';
+  img.onerror = () => {
+    if (i < EXTS.length) {
+      img.src = `assets/hero-website.${EXTS[i++]}`;
+    } else {
+      img.remove();
+      heroRoll.innerHTML = '<div class="ph"><i></i><i></i><i></i><i></i><i></i><i></i><span>Add screenshot: assets/hero-website.jpg</span></div>';
+    }
+  };
+  img.onload = () => {
+    const d = heroRoll.offsetHeight - heroView.clientHeight;
+    if (d > 0) {
+      heroRoll.style.setProperty('--d', d + 'px');
+      heroRoll.style.setProperty('--t', Math.min(Math.max(d / 40, 8), 30) + 's');
+      heroRoll.classList.add('roll');
+    }
+  };
+  heroRoll.append(img);
+  img.onerror();
+})();
