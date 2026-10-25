@@ -133,22 +133,7 @@ section { position: relative; padding: 6.5rem 0; overflow: hidden }
 .f-body h3 { font-size: 1.3rem; margin: 0 }
 .cat { color: var(--f-mute); transition: color .3s; font-size: .88rem; margin: .1rem 0 .7rem }
 .pgs { list-style: none; padding: 0; margin: 0 0 .9rem; display: flex; flex-wrap: wrap; gap: .35rem }
-.pgs button {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  line-height: 1.4;
-  max-height: 2.8em;
-  text-align: left;
-  overflow-wrap: anywhere;
-  background: none;
-  color: var(--f-fg);
-  border: 1px solid var(--f-line);
-  border-radius: 99px;
-  padding: .1rem .65rem;
-  font-size: .78rem;
-}
+.pgs button { background: none; color: var(--f-fg); border: 1px solid var(--f-line); border-radius: 99px; padding: .1rem .65rem; font-size: .78rem }
 .pgs button:hover { background: color-mix(in srgb, var(--f-fg) 14%, transparent) }
 .live { margin-top: auto; align-self: flex-start; font-size: .9rem; font-weight: 600; color: var(--f-fg) }
 
