@@ -1,10 +1,11 @@
-
- // Projects. Screenshots go in assets/projects/<slug>/<page-slug>-desktop.jpg and -mobile.jpg
+// Projects. Screenshots go in assets/projects/<slug>/<page-slug>-desktop.jpg and -mobile.jpg
+// build: choose 'Figma to WordPress', 'HTML to WordPress' or 'Wix to WordPress'. Leave '' to show nothing.
 const PROJECTS = [
   {
     slug: 'ashford-homes-ohio',
     title: 'Ashford Homes Ohio',
     category: 'Real estate',
+    build: '',
     url: 'https://www.ashfordhomesohio.com/',
     pages: [
       ['Homepage', 'homepage'],
@@ -17,6 +18,7 @@ const PROJECTS = [
     slug: 'jk-custom-homes',
     title: 'J&K Custom Homes',
     category: 'Home builder',
+    build: '',
     url: 'https://www.jkcustomhomes.net/',
     pages: [
       ['Homepage', 'homepage'],
@@ -29,6 +31,7 @@ const PROJECTS = [
     slug: 'futurethink',
     title: 'Futurethink',
     category: 'Business website',
+    build: '',
     url: 'https://futurethink.com/navigate-change/',
     pages: [
       ['Navigate Change', 'navigate-change']
@@ -38,6 +41,7 @@ const PROJECTS = [
     slug: 'golden-boy-branding',
     title: 'Golden Boy Branding',
     category: 'Business website',
+    build: '',
     url: 'https://staging-3067-huntore4ab5f5721-sfnrt.wpcomstaging.com/services/promotional-products/',
     pages: [
       ['Promotional Products', 'promotional-products'],
@@ -116,7 +120,7 @@ PROJECTS.forEach((p, pi) => {
 
   col.innerHTML = `<article class="folder">
     <button class="f-cover" aria-label="Open ${esc(p.title)} pages"><span class="f-shot"><span class="f-scroll"></span></span></button>
-    <div class="f-body"><h3>${esc(p.title)}</h3><p class="cat">${esc(p.category)}</p>
+    <div class="f-body"><div class="f-title"><h3>${esc(p.title)}</h3>${p.build ? `<span class="build">${esc(p.build)}</span>` : ''}</div><p class="cat">${esc(p.category)}</p>
     <ul class="pgs">${p.pages.map((g, gi) => `<li><button data-g="${gi}">${esc(g[0])}</button></li>`).join('')}</ul>
     <a class="live" href="${p.url}" target="_blank" rel="noopener">Visit live site</a></div></article>`;
 
@@ -170,6 +174,52 @@ nextCard.className = 'col-12 col-sm-6 col-lg-3 item';
 nextCard.innerHTML = '<a class="folder next" href="#contact"><span><b>Your project next</b>Tell me what you need built.</span></a>';
 grid.append(nextCard);
 
+// Show only 2 rows of page pills per card; the rest are in the viewer
+function fitPills(ul, pi) {
+  ul.querySelectorAll('.more-pill').forEach(x => x.remove());
+  const lis = [...ul.children];
+  lis.forEach(l => l.hidden = false);
+  if (!ul.offsetParent || lis.length < 3) return;
+
+  const tops = lis.map(l => l.offsetTop);
+  const lim = [...new Set(tops)][1];
+  if (lim === undefined) return;
+
+  const k = tops.findIndex(t => t > lim);
+  if (k < 0) return;
+  lis.forEach((l, i) => l.hidden = i >= k);
+
+  const li = document.createElement('li'), b = document.createElement('button');
+  li.className = 'more-pill';
+  li.append(b);
+  ul.append(li);
+
+  const count = () => lis.filter(l => l.hidden).length;
+  b.textContent = '+' + count();
+  b.onclick = () => openViewer(pi, lis.findIndex(l => l.hidden));
+
+  while (li.offsetTop > lim) {
+    const last = [...lis].reverse().find(l => !l.hidden);
+    if (!last) break;
+    last.hidden = true;
+    b.textContent = '+' + count();
+  }
+}
+
+function fitAll() {
+  grid.querySelectorAll('.item').forEach((it, i) => {
+    const ul = $('.pgs', it);
+    if (ul && i < PROJECTS.length) fitPills(ul, i);
+  });
+}
+
+let fitTimer;
+addEventListener('resize', () => {
+  clearTimeout(fitTimer);
+  fitTimer = setTimeout(fitAll, 150);
+});
+document.fonts?.ready.then(fitAll);
+
 // View more
 const items = [...grid.children];
 const more = $('#moreBtn');
@@ -180,6 +230,7 @@ function paint() {
   items.forEach((el, i) => el.classList.toggle('d-none', i >= shown));
   more.classList.toggle('d-none', shown >= items.length);
   wrap.classList.toggle('scroll', shown > SCROLL_AFTER);
+  fitAll();
 }
 
 more.onclick = () => {
