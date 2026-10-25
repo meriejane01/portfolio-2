@@ -76,7 +76,7 @@ PROJECTS.forEach((p, pi) => {
 });
 // Placeholder cards so you can see where new projects go.
 // Set PLACEHOLDER_SLOTS to 0 to remove them. Each real project you add replaces one placeholder.
-const PLACEHOLDER_SLOTS = 13;
+const PLACEHOLDER_SLOTS = 12;
 for (let i = PROJECTS.length; i < PLACEHOLDER_SLOTS; i++) {
   const col = document.createElement('div');
   col.className = 'col-12 col-sm-6 col-lg-3 item';
