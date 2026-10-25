@@ -235,3 +235,14 @@ html[data-theme=light] .sun, html:not([data-theme=light]) .moon { color: #12151D
   .blk { opacity: 1 }
   html { scroll-behavior: auto }
 }
+
+/* build type next to the project title */
+.f-title { display: flex; align-items: baseline; flex-wrap: wrap; gap: .2rem .6rem }
+.build { font-size: .72rem; font-weight: 600; padding: .1rem .55rem; border-radius: 99px; border: 1px solid var(--f-line); color: var(--f-mute); white-space: nowrap }
+.more-pill button { border-style: dashed }
+
+/* light theme: black folders, faded black on hover */
+[data-theme=light] .folder { --f-bg: #12151D; --f-fg: #E1DBCB; --f-mute: #9DAAB7; --f-line: #4D5E70 }
+[data-theme=light] .folder:not(.next):not(.soon):hover,
+[data-theme=light] .folder:not(.next):not(.soon):focus-within { --f-bg: #343945; --f-fg: #E1DBCB; --f-mute: #A9B4BF; --f-line: #66778A }
+[data-theme=light] .soon-img { color: #9DAAB7; border-color: #4D5E70 }
