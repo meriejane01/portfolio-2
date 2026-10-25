@@ -83,9 +83,9 @@ const PROJECTS = [
     build: 'Figma to WordPress',
     url: 'https://ddlawstage.wpenginepowered.com/langley-lawyers-help/',
     pages: [
+      ['Lawyer Help', 'lawyer-help'],
       ['Criminal Lawyer Surrey', 'criminal-lawyer-surrey'],
       ['Immigration Lawyers in Surrey', 'immigration-lawyers-in-surrey'],
-      ['Lawyer Help', 'lawyer-help'],
       ['Commercial Civil Litigation Lawyer', 'commercial-civil-litigation-lawyer']
     ]
   }
