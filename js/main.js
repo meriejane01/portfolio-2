@@ -9,7 +9,7 @@ const PROJECTS = [
 ];
 // Pages shown in the slanted grid: [project index, page index]
 const TILTED = [[0, 0], [1, 0], [0, 2], [1, 3], [2, 0], [1, 2]];
-const PAGE_SIZE = 4, SCROLL_AFTER = 12, EXTS = ['jpg', 'png', 'webp'];
+const PAGE_SIZE = 4, SCROLL_AFTER = 12, EXTS = ['jpg', 'jpeg', 'png', 'webp'];
 const $ = (s, r = document) => r.querySelector(s);
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 
