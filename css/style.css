@@ -262,3 +262,19 @@ html[data-theme=light] .sun, html:not([data-theme=light]) .moon { color: #12151D
   50%, 62% { transform: translateY(calc(-1 * var(--d))) }
   100% { transform: none }
 }
+
+
+/* Services section */
+.services { background: var(--bg) }
+.svc { height: 100%; padding: 1.6rem; border: 1px solid var(--slate); border-radius: 18px }
+.svc.star { background: var(--teal) }
+.svc h3 { font-size: 1.35rem; margin-bottom: .6rem }
+.svc p { color: var(--mist); margin: 0 }
+.also { margin-top: 2.5rem }
+.also h4 { font-family: var(--fd); font-size: 1.05rem; color: var(--cream); margin-bottom: .6rem }
+.also ul { list-style: none; margin: 0; padding: 0 }
+.also li { padding: .5rem 0; color: var(--mist); border-bottom: 1px solid color-mix(in srgb, var(--slate) 45%, transparent) }
+.how { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 3.5rem }
+.how div { padding-left: 1rem; border-left: 3px solid var(--slate); color: var(--mist) }
+.how b { display: block; color: var(--cream); margin-bottom: .2rem }
+.svc-note { margin-top: 2.5rem; color: var(--mist); max-width: 70ch }
