@@ -123,15 +123,15 @@ const PROJECTS = [
 ];
 
 // Pages shown in the slanted grid: [project number, page number], counting from 0.
-// Project numbers: 0 Ashford, 1 J&K, 2 Staying Dangerous, 3 Futurethink,
-// 4 Golden Boy, 5 Josh and Harrison, 6 Baker IT, 7 DD Law Stage
+// Project numbers: 0 Ashford, 1 J&K, 2 Golden Boy, 3 Baker IT, 4 Staying Dangerous,
+// 5 Futurethink, 6 Josh and Harrison, 7 DD Law Stage, 8 Avenir, 9 Open Bright NYC
 const TILTED = [
   [0, 0],   // Ashford Homes Ohio: Homepage
   [1, 0],   // J&K Custom Homes: Homepage
-  [4, 1],   // Golden Boy: Embroidery
-  [5, 0],   // Josh and Harrison: Industries We Serve
-  [3, 0],   // Futurethink: Navigate Change
-  [2, 0]    // Staying Dangerous: Skill Soft
+  [2, 1],   // Golden Boy: Embroidery
+  [6, 0],   // Josh and Harrison: Industries We Serve
+  [5, 0],   // Futurethink: Navigate Change
+  [4, 0]    // Staying Dangerous: Skill Soft
 ];
 
 const PAGE_SIZE = 4, SCROLL_AFTER = 12, EXTS = ['jpg', 'jpeg', 'png', 'webp'];
