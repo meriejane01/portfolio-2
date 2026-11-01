@@ -29,6 +29,34 @@ const PROJECTS = [
     ]
   },
   {
+    slug: 'golden-boy-branding',
+    title: 'Golden Boy Branding',
+    category: 'Business website',
+    build: 'Figma to WordPress (Elementor)',
+    url: 'https://staging-3067-huntore4ab5f5721-sfnrt.wpcomstaging.com/services/promotional-products/',
+    pages: [
+      ['Promotional Products', 'promotional-products'],
+      ['Embroidery', 'embroidery'],
+      ['Our Process', 'our-process'],
+      ['Trade Show Materials', 'trade-show-materials'],
+      ['Location Landing Page', 'location-landing-page'],
+      ['Locations Single Pages Sample', 'location-single-pages-sample']
+    ]
+  },
+   {
+    slug: 'baker-it',
+    title: 'Baker IT',
+    category: 'Business website',
+    build: 'Figma to WordPress (Elementor)',
+    url: 'https://bakeritsolutions.com/',
+    pages: [
+      ['Homepage', 'homepage'],
+      ['Privacy Policy', 'privacy-policy'],
+      ['Accessibility', 'accessibility'],
+      ['Sitemap', 'sitemap']
+    ]
+  },
+  {
     slug: 'staying-dangerous',
     title: 'Staying Dangerous',
     category: 'Business website',
@@ -50,21 +78,6 @@ const PROJECTS = [
     ]
   },
   {
-    slug: 'golden-boy-branding',
-    title: 'Golden Boy Branding',
-    category: 'Business website',
-    build: 'Figma to WordPress (Elementor)',
-    url: 'https://staging-3067-huntore4ab5f5721-sfnrt.wpcomstaging.com/services/promotional-products/',
-    pages: [
-      ['Promotional Products', 'promotional-products'],
-      ['Embroidery', 'embroidery'],
-      ['Our Process', 'our-process'],
-      ['Trade Show Materials', 'trade-show-materials'],
-      ['Location Landing Page', 'location-landing-page'],
-      ['Locations Single Pages Sample', 'location-single-pages-sample']
-    ]
-  },
-  {
     slug: 'josh-and-harrison',
     title: 'Josh and Harrison',
     category: 'Speaker website',
@@ -73,19 +86,6 @@ const PROJECTS = [
     pages: [
       ['Industries We Serve', 'industries-we-serve'],
       ['Contact', 'contact']
-    ]
-  },
-  {
-    slug: 'baker-it',
-    title: 'Baker IT',
-    category: 'Business website',
-    build: 'Figma to WordPress (Elementor)',
-    url: 'https://bakeritsolutions.com/',
-    pages: [
-      ['Homepage', 'homepage'],
-      ['Privacy Policy', 'privacy-policy'],
-      ['Accessibility', 'accessibility'],
-      ['Sitemap', 'sitemap']
     ]
   },
   {
