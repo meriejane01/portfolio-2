@@ -278,3 +278,6 @@ html[data-theme=light] .sun, html:not([data-theme=light]) .moon { color: #12151D
 .how div { padding-left: 1rem; border-left: 3px solid var(--slate); color: var(--mist) }
 .how b { display: block; color: var(--cream); margin-bottom: .2rem }
 .svc-note { margin-top: 2.5rem; color: var(--mist); max-width: 70ch }
+
+
+.work-note { font-size: .92rem; margin-top: -.4rem; opacity: .85 }
