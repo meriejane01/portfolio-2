@@ -111,6 +111,20 @@ const PROJECTS = [
     ]
   },
     {
+    slug: 'wdw-radio',
+    title: 'WDW Radio',
+    category: 'Business website',
+    build: 'Direct Dev WordPress (Elementor)',
+    url: '',
+    pages: [
+      ['Shop', 'shop'],
+      ['Haunts and Heroes Hotel Request Form', 'haunts-and-heroes-hotel-request-form'],
+      ['WDW Radio Nation', 'wdw-radio-nation'],
+      ['Start Here', 'start-here'],
+      ['Press Media', 'press-media']
+    ]
+  },
+    {
     slug: 'open-bright-nyc',
     title: 'Open Bright NYC',
     category: 'Dental practice',
