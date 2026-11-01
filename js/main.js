@@ -115,7 +115,7 @@ const PROJECTS = [
     title: 'WDW Radio',
     category: 'Business website',
     build: 'Direct Dev WordPress (Elementor)',
-    url: '',
+    url: 'https://www.wdwradio.com/shop/',
     pages: [
       ['Shop', 'shop'],
       ['WDW Radio Nation', 'wdw-radio-nation'],
@@ -129,7 +129,7 @@ const PROJECTS = [
     title: 'Open Bright NYC',
     category: 'Dental practice',
     build: 'AI-generated HTML to WordPress (Elementor)',
-    url: '',
+    url: 'https://openbrightnyc.com/pediatric-dentist-bronx-ny/',
     pages: [
       ['Pediatric Dentist Bronx NY', 'pediatric-dentist-bronx-ny']
     ]
