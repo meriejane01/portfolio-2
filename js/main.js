@@ -118,10 +118,10 @@ const PROJECTS = [
     url: '',
     pages: [
       ['Shop', 'shop'],
-      ['Haunts and Heroes Hotel Request Form', 'haunts-and-heroes-hotel-request-form'],
       ['WDW Radio Nation', 'wdw-radio-nation'],
       ['Start Here', 'start-here'],
-      ['Press Media', 'press-media']
+      ['Press Media', 'press-media'],
+      ['Haunts and Heroes Hotel Request Form', 'haunts-and-heroes-hotel-request-form']
     ]
   },
     {
