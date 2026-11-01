@@ -133,6 +133,17 @@ const PROJECTS = [
     pages: [
       ['Pediatric Dentist Bronx NY', 'pediatric-dentist-bronx-ny']
     ]
+  },
+    {
+    slug: 'qfilmz',
+    title: 'QFilmz',
+    category: 'Video production',
+    build: 'Figma to WordPress (Elementor)',
+    url: 'https://qfilmz.com/blog/',
+    pages: [
+      ['Blog Page', 'blog-page'],
+      ['Single Blog Page (Template)', 'single-blog-page-template']
+    ]
   }
 ];
 
