@@ -331,14 +331,21 @@ function paint() {
 
 more.onclick = () => {
   const first = shown;
+  const wasScroll = wrap.classList.contains('scroll');
+
   shown += PAGE_SIZE;
   paint();
 
-  if (wrap.classList.contains('scroll') && items[first]) {
-    wrap.scrollTo({
-      top: items[first].offsetTop - 8,
-      behavior: 'smooth'
-    });
+  if (wrap.classList.contains('scroll')) {
+    // when the section switches to its own scroll box, bring it back into view
+    if (!wasScroll) wrap.scrollIntoView({ block: 'start' });
+
+    if (items[first]) {
+      wrap.scrollTo({
+        top: items[first].offsetTop - 8,
+        behavior: 'smooth'
+      });
+    }
   }
 };
 
