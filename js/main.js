@@ -6,7 +6,7 @@ const PROJECTS = [
     slug: 'ashford-homes-ohio',
     title: 'Ashford Homes Ohio',
     category: 'Real estate',
-    build: 'Figma to WordPress',
+    build: 'Figma to WordPress (Elementor)',
     url: 'https://www.ashfordhomesohio.com/',
     pages: [
       ['Homepage', 'homepage'],
@@ -19,7 +19,7 @@ const PROJECTS = [
     slug: 'jk-custom-homes',
     title: 'J&K Custom Homes',
     category: 'Home builder',
-    build: 'Wix to WordPress',
+    build: 'Wix to WordPress (Elementor)',
     url: 'https://www.jkcustomhomes.net/',
     pages: [
       ['Homepage', 'homepage'],
@@ -32,7 +32,7 @@ const PROJECTS = [
     slug: 'staying-dangerous',
     title: 'Staying Dangerous',
     category: 'Business website',
-    build: 'Figma to WordPress',
+    build: 'Figma to WordPress (Elementor)',
     tools: [],
     url: 'https://stayingdangerous.co/skillsoft/',
     pages: [
@@ -43,7 +43,7 @@ const PROJECTS = [
     slug: 'futurethink',
     title: 'Futurethink',
     category: 'Business website',
-    build: 'Figma to WordPress',
+    build: 'Figma to WordPress (Elementor)',
     url: 'https://futurethink.com/navigate-change/',
     pages: [
       ['Navigate Change', 'navigate-change']
@@ -53,7 +53,7 @@ const PROJECTS = [
     slug: 'golden-boy-branding',
     title: 'Golden Boy Branding',
     category: 'Business website',
-    build: 'Figma to WordPress',
+    build: 'Figma to WordPress (Elementor)',
     url: 'https://staging-3067-huntore4ab5f5721-sfnrt.wpcomstaging.com/services/promotional-products/',
     pages: [
       ['Promotional Products', 'promotional-products'],
@@ -79,7 +79,7 @@ const PROJECTS = [
     slug: 'baker-it',
     title: 'Baker IT',
     category: 'Business website',
-    build: 'Figma to WordPress',
+    build: 'Figma to WordPress (Elementor)',
     url: 'https://bakeritsolutions.com/',
     pages: [
       ['Homepage', 'homepage'],
@@ -92,7 +92,7 @@ const PROJECTS = [
     slug: 'dd-law-stage',
     title: 'DD Law Stage',
     category: 'Law firm',
-    build: 'Figma to WordPress',
+    build: 'Figma to WordPress (DIVI)',
     url: 'https://ddlawstage.wpenginepowered.com/langley-lawyers-help/',
     pages: [
       ['Lawyer Help', 'lawyer-help'],
@@ -104,10 +104,20 @@ const PROJECTS = [
     slug: 'avenir',
     title: 'Avenir',
     category: 'Business website',
-    build: 'Figma to WordPress',
+    build: 'Figma to WordPress (Elementor)',
     url: 'https://avenirmozambique.com/our-project/',
     pages: [
       ['Our Project', 'our-project']
+    ]
+  },
+    {
+    slug: 'open-bright-nyc',
+    title: 'Open Bright NYC',
+    category: 'Dental practice',
+    build: 'AI-generated HTML to WordPress (Elementor)',
+    url: '',
+    pages: [
+      ['Pediatric Dentist Bronx NY', 'pediatric-dentist-bronx-ny']
     ]
   }
 ];
