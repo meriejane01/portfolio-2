@@ -282,3 +282,12 @@ html[data-theme=light] .sun, html:not([data-theme=light]) .moon { color: #12151D
 
 .work-note { display: flex; align-items: flex-start; gap: .6rem; font-size: .92rem; margin-top: -.4rem; opacity: .85 }
 .note-i { flex: none; width: 1.25rem; height: 1.25rem; margin-top: .18rem; border: 1.5px solid currentColor; border-radius: 50%; display: grid; place-items: center; font-size: .75rem; font-weight: 700; line-height: 1 }
+
+
+/* entrance: rise from the bottom */
+.reveal { opacity: 0 }
+.reveal.in { animation: rise .7s cubic-bezier(.2, .7, .2, 1) both }
+@keyframes rise {
+  from { opacity: 0; translate: 0 28px }
+  to { opacity: 1; translate: 0 0 }
+}
