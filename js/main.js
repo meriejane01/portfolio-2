@@ -518,3 +518,30 @@ const heroRoll = $('#heroRoll'), heroView = $('#heroView');
   heroRoll.append(img);
   img.onerror();
 })();
+
+
+// Entrance animation: things rise and fade in as they appear
+(function () {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+
+  const targets = document.querySelectorAll([
+    '.hero .col-lg-5 > *', '.hero .stage',
+    '#pages h2', '#pages .col-lg-5 > p', '#pages .feat li', '.tilt-card',
+    '#services h2', '#services > .container > .sub', '.svc', '.also > div', '.how > div', '.svc-note',
+    '#work h2', '#work .sub:not(.work-note)', '.work-note', '.work-stats', '.folder',
+    '#contact h2', '#contact .sub', '#contact .status', '#contact .copy', '#contact .cform',
+    '.closing .row', '.foot-line'
+  ].join(','));
+
+  const io = new IntersectionObserver(entries => {
+    let n = 0;
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.style.animationDelay = Math.min(n++ * 90, 450) + 'ms';
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.12 });
+
+  targets.forEach(t => { t.classList.add('reveal'); io.observe(t); });
+})();
