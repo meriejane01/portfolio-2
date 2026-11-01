@@ -89,6 +89,16 @@ const PROJECTS = [
     ]
   },
   {
+    slug: 'avenir',
+    title: 'Avenir',
+    category: 'Business website',
+    build: 'Figma to WordPress (Elementor)',
+    url: 'https://avenirmozambique.com/our-project/',
+    pages: [
+      ['Our Project', 'our-project']
+    ]
+  },
+  {
     slug: 'dd-law-stage',
     title: 'DD Law Stage',
     category: 'Law firm',
@@ -98,16 +108,6 @@ const PROJECTS = [
       ['Lawyer Help', 'lawyer-help'],
       ['Criminal Lawyer Surrey', 'criminal-lawyer-surrey'],
       ['Immigration Lawyers in Surrey', 'immigration-lawyers-in-surrey']
-    ]
-  },
-    {
-    slug: 'avenir',
-    title: 'Avenir',
-    category: 'Business website',
-    build: 'Figma to WordPress (Elementor)',
-    url: 'https://avenirmozambique.com/our-project/',
-    pages: [
-      ['Our Project', 'our-project']
     ]
   },
     {
