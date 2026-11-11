@@ -1,6 +1,7 @@
 // Projects. Screenshots go in assets/projects/<slug>/<page-slug>-desktop.jpg and -mobile.jpg
 // build: choose 'Figma to WordPress', 'HTML to WordPress' or 'Wix to WordPress'. Leave '' to show nothing.
 // TIP: add new projects at the END of this list so the numbers in TILTED never shift.
+// To hide a project, wrap its whole { ... } block in /* ... */ (and recheck the numbers in TILTED).
 const PROJECTS = [
   {
     slug: 'ashford-homes-ohio',
@@ -28,6 +29,7 @@ const PROJECTS = [
       ['Homes For Sale', 'homes-for-sale']
     ]
   },
+  /* HIDDEN FOR NOW: still in staging. Remove the comment marks around this block to show it again.
   {
     slug: 'golden-boy-branding',
     title: 'Golden Boy Branding',
@@ -43,7 +45,8 @@ const PROJECTS = [
       ['Locations Single Pages Sample', 'location-single-pages-sample']
     ]
   },
-   {
+  */
+  {
     slug: 'baker-it',
     title: 'Baker IT',
     category: 'Business website',
@@ -68,27 +71,6 @@ const PROJECTS = [
     ]
   },
   {
-    slug: 'futurethink',
-    title: 'Futurethink',
-    category: 'Business website',
-    build: 'Figma to WordPress (Elementor)',
-    url: 'https://futurethink.com/navigate-change/',
-    pages: [
-      ['Navigate Change', 'navigate-change']
-    ]
-  },
-  {
-    slug: 'josh-and-harrison',
-    title: 'Josh and Harrison',
-    category: 'Speaker website',
-    build: 'Figma to WordPress',
-    url: 'https://joshandharrison.com/industries/',
-    pages: [
-      ['Industries We Serve', 'industries-we-serve'],
-      ['Contact', 'contact']
-    ]
-  },
-  {
     slug: 'avenir',
     title: 'Avenir',
     category: 'Business website',
@@ -110,7 +92,7 @@ const PROJECTS = [
       ['Immigration Lawyers in Surrey', 'immigration-lawyers-in-surrey']
     ]
   },
-    {
+  {
     slug: 'wdw-radio',
     title: 'WDW Radio',
     category: 'Business website',
@@ -124,7 +106,7 @@ const PROJECTS = [
       ['Haunts and Heroes Hotel Request Form', 'haunts-and-heroes-hotel-request-form']
     ]
   },
-    {
+  {
     slug: 'open-bright-nyc',
     title: 'Open Bright NYC',
     category: 'Dental practice',
@@ -134,7 +116,7 @@ const PROJECTS = [
       ['Pediatric Dentist Bronx NY', 'pediatric-dentist-bronx-ny']
     ]
   },
-    {
+  {
     slug: 'qfilmz',
     title: 'QFilmz',
     category: 'Video production',
@@ -148,15 +130,19 @@ const PROJECTS = [
 ];
 
 // Pages shown in the slanted grid: [project number, page number], counting from 0.
-// Project numbers: 0 Ashford, 1 J&K, 2 Golden Boy, 3 Baker IT, 4 Staying Dangerous,
-// 5 Futurethink, 6 Josh and Harrison, 7 DD Law Stage, 8 Avenir, 9 Open Bright NYC
+// Project numbers (Golden Boy hidden): 0 Ashford, 1 J&K, 2 Baker IT, 3 Staying Dangerous,
+// 4 Avenir, 5 DD Law Stage, 6 WDW Radio, 7 Open Bright NYC, 8 QFilmz
 const TILTED = [
   [0, 0],   // Ashford Homes Ohio: Homepage
   [1, 0],   // J&K Custom Homes: Homepage
-  [2, 1],   // Golden Boy: Embroidery
-  [6, 0],   // Josh and Harrison: Industries We Serve
-  [5, 0],   // Futurethink: Navigate Change
-  [4, 0]    // Staying Dangerous: Skill Soft
+  [8, 0],   // QFilmz: Blog Page
+  [2, 0],   // Baker IT: Homepage
+  [3, 0],   // Staying Dangerous: Skill Soft
+  [4, 0]    // Avenir: Our Project
+  // Not shown for now:
+  // [7, 0],   // Open Bright NYC: Pediatric Dentist Bronx NY
+  // [6, 0],   // WDW Radio: Shop
+  // [5, 0],   // DD Law Stage: Lawyer Help
 ];
 
 const PAGE_SIZE = 4, SCROLL_AFTER = 12, EXTS = ['jpg', 'jpeg', 'png', 'webp'];
