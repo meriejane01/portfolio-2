@@ -1,15 +1,13 @@
 /* =========================================================
-   Merie Jane portfolio: stylesheet (charcoal and rose)
+   Merie Jane portfolio: stylesheet
    1 Base   2 Navigation   3 Buttons & small UI   4 Hero
    5 Pages  6 Projects     7 Viewer   8 Contact   9 Footer
-   10 Theme toggle   11 Services   12 Notes, hero image, entrance
-   13 Light mode   14 Reduced motion
+   10 Theme toggle   11 Light theme   12 Reduced motion
    ========================================================= */
 
 /* 1. Base ------------------------------------------------ */
 :root {
-  --ink: #151518; --bg: #1F1F23; --teal: #2A2A2F; --slate: #4A4549; --mist: #B9AFB3; --cream: #F7EFEF;
-  --rose: #E7BFC6; --rose-text: #E9AEB8;
+  --ink: #12151D; --bg: #1B1F2B; --teal: #29363F; --slate: #4D5E70; --mist: #9DAAB7; --cream: #E1DBCB;
   --fd: 'Familjen Grotesk', system-ui, sans-serif; --fb: 'Figtree', system-ui, sans-serif;
 }
 html { scroll-behavior: smooth; scroll-padding-top: 70px }
@@ -18,85 +16,90 @@ h1, h2, h3 { font-family: var(--fd); font-weight: 600; letter-spacing: -.02em; l
 h2 { font-size: clamp(2rem, 4vw, 3.1rem); margin-bottom: 1rem }
 section { position: relative; padding: 6.5rem 0; overflow: hidden }
 .sub { color: var(--mist); max-width: 52ch }
-::selection { background: var(--rose); color: #2B2B30 }
 :focus-visible { outline: 2px solid var(--cream); outline-offset: 3px }
 .on-cream :focus-visible { outline-color: var(--ink) }
 
 /* 2. Navigation ------------------------------------------ */
 .site-nav { position: fixed; inset: 0 0 auto; z-index: 1030; padding: .85rem 0; transition: background .3s }
-.site-nav.scrolled { background: rgba(31, 31, 35, .9); backdrop-filter: blur(12px) }
+.site-nav.scrolled { background: rgba(27, 31, 43, .88); backdrop-filter: blur(12px) }
 .site-nav .nav-link { color: var(--mist); font-weight: 500 }
 .site-nav .nav-link:hover, .site-nav .nav-link.active { color: var(--cream) }
 .brand { display: inline-flex; align-items: center; gap: .6rem; font-family: var(--fd); font-weight: 700; font-size: 1.3rem; color: var(--cream); text-decoration: none }
 .logo-mark { width: 34px; height: 34px }
-.logo-mark rect { fill: var(--rose) }
-.logo-mark ellipse { fill: #2B2B30 }
-@media (min-width: 992px) {
-  .site-nav .navbar-nav { gap: .2rem !important; padding: .3rem .45rem; border: 1px solid var(--slate); border-radius: 99px; background: rgba(255, 255, 255, .04) }
-  .site-nav .nav-link { padding: .3rem .9rem; border-radius: 99px }
-  .site-nav .nav-link:hover, .site-nav .nav-link.active { background: rgba(231, 191, 198, .3) }
-}
+.logo-mark rect { fill: var(--cream) }
+.logo-mark path { fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round }
 @media (max-width: 991.98px) {
   .site-nav .navbar-collapse { background: var(--ink); border-radius: 14px; padding: 1rem; margin-top: .7rem }
 }
 
 /* 3. Buttons & small UI ---------------------------------- */
 .btn-cream, .btn-line { display: inline-flex; align-items: center; gap: .6rem; border-radius: 99px; padding: .9rem 1.6rem; font-weight: 600; text-decoration: none; border: 0; transition: transform .2s, background .2s }
-.btn-cream { background: var(--rose); color: #2B2B30 }
-.btn-cream:hover { background: #F0D0D5; color: #2B2B30; transform: translateY(-2px) }
-.btn-cream svg { width: 28px; height: 28px; padding: 6px; border-radius: 50%; background: #2B2B30; color: #fff }
+.btn-cream { background: var(--cream); color: var(--ink) }
+.btn-cream:hover { background: #fff; color: var(--ink); transform: translateY(-2px) }
 .btn-line { background: none; color: var(--cream); border: 1.5px solid var(--slate) }
-.btn-line:hover { border-color: var(--rose-text) }
-.status { display: inline-flex; align-items: center; gap: .6rem; padding: .4rem .95rem; background: rgba(255, 255, 255, .04); border: 1px solid color-mix(in srgb, currentColor 25%, transparent); border-radius: 99px; font-size: .92rem }
+.btn-line:hover { border-color: var(--cream) }
+.status { display: inline-flex; align-items: center; gap: .6rem; padding: .4rem .95rem; border: 1px solid color-mix(in srgb, currentColor 25%, transparent); border-radius: 99px; font-size: .92rem }
 .pulse { width: 9px; height: 9px; border-radius: 50%; background: #7FD6A4; animation: pulse 2s infinite }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(127, 214, 164, .6) } 100% { box-shadow: 0 0 0 11px rgba(127, 214, 164, 0) } }
 
 /* 4. Hero ------------------------------------------------ */
-.hero { min-height: min(100svh, 860px); display: flex; align-items: center; padding: 7rem 0 4rem; overflow: hidden }
+.hero { min-height: 100svh; display: flex; align-items: center; padding: 7rem 0 4rem; overflow: hidden }
 .hero h1 { font-size: clamp(2.6rem, 5.2vw, 4.5rem); margin: 1.3rem 0 }
 .lead-text { color: var(--mist); max-width: 40ch; margin-bottom: 2rem }
 .stage { position: relative; padding: 1.5rem 0 2.5rem }
-.disc { display: none }
+.disc { position: absolute; width: 88%; aspect-ratio: 1; right: -6%; top: 50%; transform: translateY(-50%); border-radius: 50%; background: var(--teal) }
 .monitor { position: relative; max-width: 640px; margin-inline: auto }
-.screen { background: #fff; border: 9px solid #E5C3C8; border-radius: 14px; aspect-ratio: 16/10; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 40px 70px -30px rgba(0, 0, 0, .5) }
-.stand { width: 20%; height: 40px; margin: 0 auto; background: #E5C3C8; clip-path: polygon(15% 0, 85% 0, 100% 100%, 0 100%) }
-.ed-top { display: flex; align-items: center; gap: .6rem; height: 26px; padding: 0 .7rem; background: #F1DEE0; font-size: .62rem; color: #6F6A6E }
+.screen { background: var(--ink); border: 9px solid #0B0D12; border-radius: 14px; aspect-ratio: 16/10; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 40px 70px -30px rgba(0, 0, 0, .65) }
+.stand { width: 20%; height: 40px; margin: 0 auto; background: #0B0D12; clip-path: polygon(15% 0, 85% 0, 100% 100%, 0 100%) }
+
+/* editor mockup inside the monitor */
+.ed-top { display: flex; align-items: center; gap: .6rem; height: 26px; padding: 0 .7rem; background: #0B0D12; font-size: .62rem; color: var(--mist) }
+.ed-top b { margin-left: auto; background: var(--cream); color: var(--ink); padding: 0 .6rem; border-radius: 99px }
 .dots { display: flex; gap: 4px }
-.dots i { width: 6px; height: 6px; border-radius: 50%; background: #C9A0A8 }
-.hero-view { flex: 1; min-height: 0; overflow: hidden; background: #fff }
-.hero-roll img { width: 100%; display: block }
-.hero-roll .ph { height: 900px }
-.hero-roll.roll { animation: heroScroll var(--t, 14s) ease-in-out infinite }
-@keyframes heroScroll {
-  0%, 12% { transform: none }
-  50%, 62% { transform: translateY(calc(-1 * var(--d))) }
-  100% { transform: none }
-}
+.dots i { width: 6px; height: 6px; border-radius: 50%; background: var(--slate) }
+.ed-body { position: relative; flex: 1; display: grid; grid-template-columns: 27% 1fr; min-height: 0 }
+.ed-panel { background: #171B25; padding: .5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5px; align-content: start }
+.w { background: #222836; border-radius: 5px; padding: .7rem .1rem; text-align: center; font-size: .5rem; color: var(--mist) }
+.w.hot { animation: hot 9s infinite }
+.ed-canvas { background: var(--cream); padding: .5rem; display: flex; flex-direction: column; gap: .4rem; overflow: hidden }
+.blk { border-radius: 5px; opacity: 0; animation: build 9s cubic-bezier(.2, .8, .2, 1) infinite; animation-delay: calc(var(--i) * .9s + 1.6s) }
+.b1 { height: 12px; background: #CFC8B5 }
+.b2 { background: var(--ink); padding: .7rem; display: grid; gap: 5px; flex: 1 }
+.b2 u { height: 7px; background: var(--cream); border-radius: 3px; width: 70% }
+.b2 u + u { width: 48%; opacity: .6 }
+.b2 s { height: 10px; width: 30%; background: var(--cream); border-radius: 99px; margin-top: 4px }
+.b3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; height: 34% }
+.b3 u { background: var(--slate); border-radius: 4px }
+.b4 { height: 16px; background: var(--slate) }
+.cursor { position: absolute; width: 16px; height: 16px; left: 12%; top: 30%; z-index: 3; animation: cur 9s ease-in-out infinite }
+@keyframes hot { 0%, 12% { outline: 0 } 16%, 30% { outline: 2px solid var(--cream) } 36%, 100% { outline: 0 } }
+@keyframes build { 0% { opacity: 0; transform: translateY(-12px) scale(.97) } 8%, 80% { opacity: 1; transform: none } 92%, 100% { opacity: 0; transform: translateY(6px) } }
+@keyframes cur { 0% { left: 12%; top: 60% } 14% { left: 15%; top: 40% } 34% { left: 60%; top: 48% } 60% { left: 72%; top: 30% } 85%, 100% { left: 12%; top: 60% } }
 
 /* floating chips */
-.chip { position: absolute; z-index: 2; background: #fff; color: #2B2B30; border: 1px solid #E8D6D8; padding: .4rem .9rem; border-radius: 99px; font-weight: 600; font-size: .85rem; box-shadow: 0 10px 24px -12px rgba(43, 43, 48, .35); animation: bob 6s ease-in-out infinite }
-.c1 { left: -2%; top: 6%; background: var(--rose); border-color: var(--rose) }
+.chip { position: absolute; z-index: 2; background: var(--cream); color: var(--ink); padding: .4rem .9rem; border-radius: 99px; font-weight: 600; font-size: .85rem; box-shadow: 0 12px 28px -10px rgba(0, 0, 0, .55); animation: bob 6s ease-in-out infinite }
+.c1 { left: -2%; top: 6% }
 .c2 { right: 0; top: 20%; animation-delay: -2s }
 .c3 { right: 6%; bottom: 6%; animation-delay: -4s }
 @keyframes bob { 50% { transform: translateY(-9px) } }
 @media (max-width: 575.98px) { .c3 { display: none } .chip { font-size: .75rem } }
 
 /* 5. Pages section --------------------------------------- */
-.on-cream { --ink: #2B2B30; --cream: #F6E6E8; --slate: #C9A9AE; --mist: #6F6A6E; background: var(--cream); color: var(--ink) }
-.on-cream p, .feat li { color: #5B5559 }
+.on-cream { background: var(--cream); color: var(--ink) }
+.on-cream p, .feat li { color: #454D58 }
 .feat { list-style: none; padding: 0; margin: 1.8rem 0 0; display: grid; gap: 1rem }
-.feat li { padding-left: 1rem; border-left: 3px solid var(--rose) }
+.feat li { padding-left: 1rem; border-left: 3px solid var(--slate) }
 .feat b { display: block; color: var(--ink) }
 .tilt-stage { position: relative; min-height: 540px; display: grid; place-items: center }
-.tilt-stage::before { content: ""; position: absolute; width: 78%; aspect-ratio: 1; border-radius: 50%; background: #EBD3D6 }
+.tilt-stage::before { content: ""; position: absolute; width: 78%; aspect-ratio: 1; border-radius: 50%; background: #D5CEBB }
 .tilt-grid { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 170px)); gap: 24px }
-.tilt-card { appearance: none; border: 0; padding: 0; background: #fff; border-radius: 12px; overflow: hidden; aspect-ratio: 3/4; display: flex; flex-direction: column; text-align: left; cursor: pointer; box-shadow: 0 18px 30px -14px rgba(43, 43, 48, .4); transition: transform .35s }
+.tilt-card { appearance: none; border: 0; padding: 0; background: #fff; border-radius: 12px; overflow: hidden; aspect-ratio: 3/4; display: flex; flex-direction: column; text-align: left; cursor: pointer; box-shadow: 0 18px 30px -14px rgba(18, 21, 29, .4); transition: transform .35s }
 .tilt-card:hover, .tilt-card:focus-visible { transform: translateY(-10px) }
 .tilt-thumb { flex: 1; overflow: hidden; min-height: 0 }
 .tilt-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block }
 .tilt-thumb .ph { height: 100% }
-.tilt-cap { padding: .4rem .55rem; font-size: .7rem; font-weight: 600; line-height: 1.2; color: #2B2B30 }
-.tilt-cap small { display: block; font-weight: 400; color: #6F6A6E }
+.tilt-cap { padding: .4rem .55rem; font-size: .7rem; font-weight: 600; line-height: 1.2; color: var(--ink) }
+.tilt-cap small { display: block; font-weight: 400; color: #6A727D }
 @media (max-width: 575.98px) {
   .tilt-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; width: 100% }
   .tilt-stage { min-height: 0; padding: 1rem 0 }
@@ -113,20 +116,17 @@ section { position: relative; padding: 6.5rem 0; overflow: hidden }
 .work-scroll.scroll::-webkit-scrollbar { width: 10px }
 .work-scroll.scroll::-webkit-scrollbar-track { background: rgba(125, 140, 155, .25); border-radius: 99px }
 .work-scroll.scroll::-webkit-scrollbar-thumb { background: var(--slate); border-radius: 99px }
-.work-stats { display: flex; flex-wrap: wrap; gap: .4rem 2.5rem; margin: 1.5rem 0 2.25rem }
-.work-stats span { color: var(--mist) }
-.work-stats b { font-family: var(--fd); font-size: 2.4rem; font-weight: 600; line-height: 1; color: var(--rose-text); margin-right: .55rem; vertical-align: middle }
 
 .folder { --f-bg: var(--ink); --f-fg: var(--cream); --f-mute: var(--mist); --f-line: var(--slate);
   position: relative; display: flex; flex-direction: column; margin-top: 16px; height: calc(100% - 16px);
   background: var(--f-bg); color: var(--f-fg); border-radius: 0 16px 16px 16px; transition: background .3s, color .3s }
-/* hover: the card flips to the opposite tone */
+/* hover: the card flips to the opposite tone (light in dark mode, dark in light mode) */
 .folder:not(.next):not(.soon):hover, .folder:not(.next):not(.soon):focus-within {
   --f-bg: var(--cream); --f-fg: var(--ink);
   --f-mute: color-mix(in srgb, var(--ink) 65%, var(--cream)); --f-line: color-mix(in srgb, var(--ink) 40%, transparent) }
 .folder::before { content: ""; position: absolute; left: 0; top: -16px; width: 44%; height: 18px; background: var(--f-bg); border-radius: 10px 10px 0 0; transition: background .3s }
 .f-cover { display: block; width: 100%; padding: 10px 10px 0; border: 0; background: none }
-.f-shot { display: block; height: 170px; overflow: hidden; border-radius: 10px; background: #2A2A2F }
+.f-shot { display: block; height: 170px; overflow: hidden; border-radius: 10px; background: #222836 }
 .f-scroll { display: block; transition: transform linear }
 .f-scroll img { width: 100%; display: block }
 .f-body { flex: 1; display: flex; flex-direction: column; padding: 1rem 1.1rem 1.2rem }
@@ -135,7 +135,6 @@ section { position: relative; padding: 6.5rem 0; overflow: hidden }
 .pgs { list-style: none; padding: 0; margin: 0 0 .9rem; display: flex; flex-wrap: wrap; gap: .35rem }
 .pgs button { background: none; color: var(--f-fg); border: 1px solid var(--f-line); border-radius: 99px; padding: .1rem .65rem; font-size: .78rem }
 .pgs button:hover { background: color-mix(in srgb, var(--f-fg) 14%, transparent) }
-.more-pill button { border-style: dashed }
 .live { margin-top: auto; align-self: flex-start; font-size: .9rem; font-weight: 600; color: var(--f-fg) }
 
 /* "your project next" card and placeholder cards */
@@ -147,79 +146,71 @@ section { position: relative; padding: 6.5rem 0; overflow: hidden }
 .soon-img { display: grid; place-items: center; height: 100%; color: var(--mist); font-size: .85rem; border: 1.5px dashed var(--slate); border-radius: 10px }
 
 /* screenshot placeholder (shown until real images are added) */
-.ph { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; align-content: start; height: 1500px; padding: 10px; overflow: hidden; background: #F5EFEF; color: #6F6A6E; font-size: .7rem }
+.ph { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; align-content: start; height: 1500px; padding: 10px; overflow: hidden; background: #F2EFE7; color: #4D5E70; font-size: .7rem }
 .ph[data-dev=mobile] { height: 1800px }
 .ph span { overflow-wrap: anywhere }
-.ph i { display: block; height: 46px; border-radius: 6px; background: #E8D6D8 }
-.ph i:nth-child(2) { height: 220px; background: #C9A9AE }
+.ph i { display: block; height: 46px; border-radius: 6px; background: #D8D1BE }
+.ph i:nth-child(2) { height: 220px; background: var(--slate) }
 .ph i:nth-child(4) { height: 160px }
-.ph i:nth-child(6) { height: 240px; background: #D9C0C4 }
+.ph i:nth-child(6) { height: 240px; background: #B9B29F }
 
 /* 7. Project viewer (modal) ------------------------------ */
 .viewer { background: var(--ink); color: var(--cream); border: 0; border-radius: 18px }
 .v-head { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem .5rem }
 .v-head h3 { font-size: 1.4rem; margin: 0 }
 .v-head a { font-size: .85rem; color: var(--mist) }
-.v-build { margin-left: auto; font-size: .85rem; font-weight: 500; color: var(--mist); border: 1px solid var(--slate); border-radius: 99px; padding: .35rem .9rem; white-space: nowrap }
-.v-build + .v-dev { margin-left: 0 }
-.v-build:empty { display: none }
 .v-dev { margin-left: auto; display: flex; border: 1px solid var(--slate); border-radius: 99px; padding: 3px }
 .v-dev button { background: none; border: 0; color: var(--mist); border-radius: 99px; padding: .25rem .9rem; font-size: .85rem }
-.v-dev button.on { background: #2B2B30; color: #fff }
+.v-dev button.on { background: var(--cream); color: var(--ink) }
 .v-x { background: none; border: 0; color: var(--cream); font-size: 1.9rem; line-height: 1 }
 .v-tabs { display: flex; gap: .4rem; padding: .4rem 1.25rem; overflow-x: auto }
 .v-tabs button { white-space: nowrap; background: none; color: var(--mist); border: 1px solid var(--slate); border-radius: 99px; padding: .25rem .9rem; font-size: .9rem }
-.v-tabs button.on { background: #2B2B30; color: #fff }
-.v-screen { margin: .5rem 1.25rem 1.25rem; height: 68vh; overflow-y: auto; background: #2A2A2F; border-radius: 12px }
+.v-tabs button.on { background: var(--slate); color: #fff }
+.v-screen { margin: .5rem 1.25rem 1.25rem; height: 68vh; overflow-y: auto; background: #222836; border-radius: 12px }
 .v-screen img { width: 100%; display: block }
 .v-screen.mob { display: flex; justify-content: center; padding: 1rem }
 .v-screen.mob > * { width: 390px; max-width: 100%; height: max-content; border-radius: 18px; overflow: hidden }
-@media (max-width: 575.98px) {
-  .v-head { flex-wrap: wrap }
-  .v-build { order: 5; margin-left: 0 }
-}
 
 /* 8. Contact --------------------------------------------- */
-.contact { --ink: #2B2B30; --cream: #F7EFEF; --slate: #5A5459; --mist: #C9BFC3; --teal: #3A383D; background: var(--ink); color: #F7EFEF }
+.contact { background: var(--ink) }
 .orb { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .4; animation: drift 16s ease-in-out infinite alternate }
-.o1 { width: 420px; height: 420px; background: var(--rose); opacity: .16; left: -120px; top: 30% }
-.o2 { width: 360px; height: 360px; background: #8E7F85; opacity: .22; right: -80px; bottom: -60px; animation-delay: -6s }
+.o1 { width: 420px; height: 420px; background: var(--slate); left: -120px; top: 30% }
+.o2 { width: 360px; height: 360px; background: var(--teal); right: -80px; bottom: -60px; animation-delay: -6s }
 @keyframes drift { to { transform: translate(80px, -60px) } }
 .copy { margin-top: 1.5rem; display: flex; align-items: center; gap: 1rem; background: none; color: var(--cream); border: 1.5px solid var(--slate); border-radius: 14px; padding: .8rem 1.1rem }
-.copy:hover { border-color: var(--rose-text) }
-.copy em { font-style: normal; margin-left: auto; background: var(--rose); color: #2B2B30; border-radius: 99px; padding: 0 .7rem; font-size: .8rem }
-.cform { background: rgba(255, 255, 255, .06); backdrop-filter: blur(10px); border: 1px solid rgba(231, 191, 198, .22); border-radius: 22px; padding: 1.75rem }
+.copy:hover { border-color: var(--cream) }
+.copy em { font-style: normal; margin-left: auto; background: var(--slate); border-radius: 99px; padding: 0 .7rem; font-size: .8rem }
+.cform { background: rgba(41, 54, 63, .72); backdrop-filter: blur(10px); border: 1px solid rgba(225, 219, 203, .12); border-radius: 22px; padding: 1.75rem }
 .cform legend { font-size: 1rem; font-family: var(--fd); font-weight: 600; margin-bottom: .6rem }
 .pick { display: inline-block; margin: 0 .4rem .5rem 0; cursor: pointer }
 .pick input { position: absolute; opacity: 0 }
 .pick span { display: block; padding: .35rem 1rem; border: 1.5px solid var(--slate); border-radius: 99px; font-size: .92rem; transition: .2s }
-.pick input:checked + span { background: var(--rose); color: #2B2B30; border-color: var(--rose) }
-.pick input:focus-visible + span { outline: 2px solid var(--rose); outline-offset: 3px }
+.pick input:checked + span { background: var(--cream); color: var(--ink); border-color: var(--cream) }
+.pick input:focus-visible + span { outline: 2px solid var(--cream); outline-offset: 3px }
 .field { position: relative }
-.field input, .field textarea { width: 100%; background: rgba(0, 0, 0, .25); color: var(--cream); border: 1.5px solid var(--slate); border-radius: 12px; padding: 1.45rem .95rem .5rem; font: inherit }
-.field input:focus, .field textarea:focus { outline: 0; border-color: var(--rose) }
+.field input, .field textarea { width: 100%; background: rgba(18, 21, 29, .55); color: var(--cream); border: 1.5px solid var(--slate); border-radius: 12px; padding: 1.45rem .95rem .5rem; font: inherit }
+.field input:focus, .field textarea:focus { outline: 0; border-color: var(--cream) }
 .field label { position: absolute; left: .95rem; top: .85rem; color: var(--mist); pointer-events: none; transition: .18s; transform-origin: left }
 .field input:focus + label, .field textarea:focus + label,
 .field input:not(:placeholder-shown) + label, .field textarea:not(:placeholder-shown) + label { transform: translateY(-.55rem) scale(.78) }
 #formMsg { color: var(--mist); font-size: .95rem }
-.contact :focus-visible { outline-color: var(--rose) }
 
 /* 9. Footer ---------------------------------------------- */
 .closing { background: var(--bg); padding: 5rem 0 2rem }
-.foot-line { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 4rem; padding-top: 1.4rem; border-top: 1px solid rgba(247, 239, 239, .14); color: var(--mist); font-size: .9rem }
+.foot-line { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 4rem; padding-top: 1.4rem; border-top: 1px solid rgba(225, 219, 203, .14); color: var(--mist); font-size: .9rem }
 .foot-line a { color: var(--cream) }
 .foot-links { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem }
 .foot-links a { display: inline-flex; align-items: center; gap: .45rem; text-decoration: none }
 .foot-links a:hover { text-decoration: underline }
 
 /* 10. Dark / light toggle -------------------------------- */
-.theme-toggle { position: fixed; right: 14px; top: 50%; translate: 0 -50%; z-index: 1040; width: 42px; height: 88px; padding: 0; border-radius: 99px; border: 1.5px solid rgba(231, 191, 198, .4); background: #2B2B30; box-shadow: 0 10px 30px -8px rgba(0, 0, 0, .5); color: #B9AFB3 }
-.theme-toggle::before { content: ""; position: absolute; left: 4px; top: 4px; width: 30px; height: 34px; border-radius: 50%; background: var(--rose); transition: transform .3s cubic-bezier(.3, 1.4, .5, 1) }
+.theme-toggle { position: fixed; right: 14px; top: 50%; translate: 0 -50%; z-index: 1040; width: 42px; height: 88px; padding: 0; border-radius: 99px; border: 1.5px solid rgba(225, 219, 203, .35); background: #12151D; box-shadow: 0 10px 30px -8px rgba(0, 0, 0, .5); color: #9DAAB7 }
+.theme-toggle::before { content: ""; position: absolute; left: 4px; top: 4px; width: 30px; height: 34px; border-radius: 50%; background: #E1DBCB; transition: transform .3s cubic-bezier(.3, 1.4, .5, 1) }
 html:not([data-theme=light]) .theme-toggle::before { transform: translateY(46px) }
 .theme-toggle svg { position: absolute; left: 11px; width: 18px; height: 18px; transition: color .3s }
 .theme-toggle .sun { top: 12px }
 .theme-toggle .moon { top: 58px }
-html[data-theme=light] .sun, html:not([data-theme=light]) .moon { color: #2B2B30 }
+html[data-theme=light] .sun, html:not([data-theme=light]) .moon { color: #12151D }
 @media (max-width: 575.98px) {
   .theme-toggle { top: auto; bottom: 18px; right: 8px; translate: none; width: 38px; height: 80px }
   .theme-toggle::before { width: 26px; height: 30px; transform: none }
@@ -229,24 +220,70 @@ html[data-theme=light] .sun, html:not([data-theme=light]) .moon { color: #2B2B30
   .theme-toggle .moon { top: 52px }
 }
 
-/* 11. Services ------------------------------------------- */
+/* 11. Light theme ---------------------------------------- */
+/* Palette roles swap. The pages and contact sections keep their own look. */
+[data-theme=light] { --bg: #F4F1EA; --ink: #E1DBCB; --cream: #12151D; --teal: #D8D1BE; --slate: #66778A; --mist: #4D5E70 }
+[data-theme=light] .on-cream, [data-theme=light] .contact { --ink: #12151D; --cream: #E1DBCB; --slate: #4D5E70; --mist: #9DAAB7; --teal: #29363F }
+[data-theme=light] .contact { color: #E1DBCB }
+[data-theme=light] .work { background: #EAE5D8 }
+[data-theme=light] .site-nav.scrolled { background: rgba(244, 241, 234, .9) }
+[data-theme=light] .foot-line { border-top-color: rgba(18, 21, 29, .15) }
+
+/* 12. Reduced motion ------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  /* stop only the constant looping motion; keep the gentle hover transitions */
+  .pulse, .chip, .orb, .hero-roll { animation: none !important }
+  html { scroll-behavior: auto }
+}
+
+/* build type next to the project title */
+.v-build { margin-left: auto; font-size: .85rem; font-weight: 500; color: var(--mist); border: 1px solid var(--slate); border-radius: 99px; padding: .35rem .9rem; white-space: nowrap }
+.v-build + .v-dev { margin-left: 0 }
+.v-build:empty { display: none }
+@media (max-width: 575.98px) {
+  .v-head { flex-wrap: wrap }
+  .v-build { order: 5; margin-left: 0 }
+}
+.more-pill button { border-style: dashed }
+
+/* light theme: black folders, faded black on hover */
+[data-theme=light] .folder { --f-bg: #12151D; --f-fg: #E1DBCB; --f-mute: #9DAAB7; --f-line: #4D5E70 }
+[data-theme=light] .folder:not(.next):not(.soon):hover,
+[data-theme=light] .folder:not(.next):not(.soon):focus-within { --f-bg: #343945; --f-fg: #E1DBCB; --f-mute: #A9B4BF; --f-line: #66778A }
+[data-theme=light] .soon-img { color: #9DAAB7; border-color: #4D5E70 }
+
+
+.hero-view { flex: 1; min-height: 0; overflow: hidden; background: #fff }
+.hero-roll img { width: 100%; display: block }
+.hero-roll .ph { height: 900px }
+.hero-roll.roll { animation: heroScroll var(--t, 14s) ease-in-out infinite }
+@keyframes heroScroll {
+  0%, 12% { transform: none }
+  50%, 62% { transform: translateY(calc(-1 * var(--d))) }
+  100% { transform: none }
+}
+
+
+/* Services section */
 .services { background: var(--bg) }
 .svc { height: 100%; padding: 1.6rem; border: 1px solid var(--slate); border-radius: 18px }
 .svc.star { background: var(--teal) }
 .svc h3 { font-size: 1.35rem; margin-bottom: .6rem }
 .svc p { color: var(--mist); margin: 0 }
 .also { margin-top: 2.5rem }
-.also h4 { font-family: var(--fd); font-size: 1.05rem; color: var(--rose-text); margin-bottom: .6rem }
+.also h4 { font-family: var(--fd); font-size: 1.05rem; color: var(--cream); margin-bottom: .6rem }
 .also ul { list-style: none; margin: 0; padding: 0 }
 .also li { padding: .5rem 0; color: var(--mist); border-bottom: 1px solid color-mix(in srgb, var(--slate) 45%, transparent) }
 .how { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 3.5rem }
-.how div { padding-left: 1rem; border-left: 3px solid var(--rose); color: var(--mist) }
+.how div { padding-left: 1rem; border-left: 3px solid var(--slate); color: var(--mist) }
 .how b { display: block; color: var(--cream); margin-bottom: .2rem }
 .svc-note { margin-top: 2.5rem; color: var(--mist); max-width: 70ch }
 
-/* 12. Notes and entrance ---------------------------------- */
+
 .work-note { display: flex; align-items: flex-start; gap: .6rem; font-size: .92rem; margin-top: -.4rem; opacity: .85 }
 .note-i { flex: none; width: 1.25rem; height: 1.25rem; margin-top: .18rem; border: 1.5px solid currentColor; border-radius: 50%; display: grid; place-items: center; font-size: .75rem; font-weight: 700; line-height: 1 }
+
+
 /* entrance: rise from the bottom */
 .reveal { opacity: 0 }
 .reveal.in { animation: rise .7s cubic-bezier(.2, .7, .2, 1) both }
@@ -255,35 +292,5 @@ html[data-theme=light] .sun, html:not([data-theme=light]) .moon { color: #2B2B30
   to { opacity: 1; translate: 0 0 }
 }
 
-/* 13. Light mode (warm off-white with charcoal and rose) -- */
-[data-theme=light] { --bg: #FAF6F5; --ink: #F1E7E6; --teal: #F3E8E8; --slate: #DCC7CA; --mist: #6F6A6E; --cream: #2B2B30; --rose-text: #A24B5C }
-[data-theme=light] .site-nav.scrolled { background: rgba(250, 246, 245, .92) }
-[data-theme=light] .foot-line { border-top-color: rgba(43, 43, 48, .12) }
-[data-theme=light] .logo-mark rect { fill: #2B2B30 }
-[data-theme=light] .logo-mark ellipse { fill: #FAF6F5 }
-@media (min-width: 992px) {
-  [data-theme=light] .site-nav .navbar-nav { background: rgba(255, 255, 255, .55) }
-  [data-theme=light] .site-nav .nav-link:hover, [data-theme=light] .site-nav .nav-link.active { background: rgba(231, 191, 198, .4) }
-}
-[data-theme=light] .btn-cream { background: #2B2B30; color: #fff }
-[data-theme=light] .btn-cream:hover { background: #3F3C43; color: #fff }
-[data-theme=light] .btn-cream svg { background: #fff; color: #2B2B30 }
-[data-theme=light] .contact .btn-cream { background: var(--rose); color: #2B2B30 }
-[data-theme=light] .contact .btn-cream:hover { background: #F0D0D5; color: #2B2B30 }
-[data-theme=light] .contact .btn-cream svg { background: #2B2B30; color: #fff }
-[data-theme=light] .status { background: rgba(255, 255, 255, .6) }
-[data-theme=light] .contact .status { background: rgba(255, 255, 255, .05) }
-[data-theme=light] .v-dev button.on, [data-theme=light] .v-tabs button.on { background: #2B2B30; color: #fff }
-[data-theme=light] .folder { --f-bg: #2B2B30; --f-fg: #F7EFEF; --f-mute: #C9BFC3; --f-line: #5A5459 }
-[data-theme=light] .folder:not(.next):not(.soon):hover,
-[data-theme=light] .folder:not(.next):not(.soon):focus-within { --f-bg: #3F3C43; --f-fg: #F7EFEF; --f-mute: #D5CBCF; --f-line: #756D73 }
-[data-theme=light] .soon-img { color: #B9AFB3; border-color: #5A5459 }
-html:not([data-theme=light]) .v-dev button.on, html:not([data-theme=light]) .v-tabs button.on { background: var(--rose); color: #2B2B30 }
-html:not([data-theme=light]) .btn-cream svg { background: #2B2B30; color: #fff }
 
-/* 14. Reduced motion ------------------------------------- */
-@media (prefers-reduced-motion: reduce) {
-  /* stop only the constant looping motion; keep the gentle hover transitions */
-  .pulse, .chip, .orb, .hero-roll { animation: none !important }
-  html { scroll-behavior: auto }
-}
+.hero { min-height: min(100svh, 860px) }
