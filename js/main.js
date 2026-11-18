@@ -31,6 +31,7 @@ const PROJECTS = [
       ['Homes For Sale', 'homes-for-sale']
     ]
   },
+  /*
   {
     slug: 'longview-commercial',
     title: 'Longview Commercial',
@@ -66,7 +67,7 @@ const PROJECTS = [
       ['Download Page', 'download-page'],
       ['FAQ Page', 'faq-page']
     ]
-  },
+  },*/
   // ---- Row 2: tall cards ----
   {
     slug: 'baker-it',
