@@ -40,13 +40,13 @@ const PROJECTS = [
     url: 'https://longviewcommercial.com',
     pages: [
       ['Market Intelligence', 'market-intelligence'],
-      ['Market Intelligence Short Report (Template)', 'market-intelligence-short-report-template'],
-      ['Request Investor Access', 'request-investor-access'],
-      ['Full Report Template', 'full-report-template'],
       ['Legal Disclaimer', 'legal-disclaimer'],
       ['Privacy Policy', 'privacy-policy'],
       ['Terms of Use', 'terms-of-use'],
       ['Cookie Policy', 'cookie-policy'],
+      ['Market Intelligence Short Report (Template)', 'market-intelligence-short-report-template'],
+      ['Request Investor Access', 'request-investor-access'],
+      ['Full Report Template', 'full-report-template'],
       ['International Policy', 'international-policy']
     ]
   },
