@@ -1,8 +1,10 @@
 // Projects. Screenshots go in assets/projects/<slug>/<page-slug>-desktop.jpg and -mobile.jpg
 // build: choose 'Figma to WordPress', 'HTML to WordPress' or 'Wix to WordPress'. Leave '' to show nothing.
-// TIP: add new projects at the END of this list so the numbers in TILTED never shift.
-// To hide a project, wrap its whole { ... } block in /* ... */ (and recheck the numbers in TILTED).
+// ORDER: the order of this list is the order on the page, 4 cards per row.
+// Keep projects with a similar number of pages (similar card height) in the same row.
+// To hide a project, wrap its whole { ... } block in /* ... */ (TILTED finds projects by name, so nothing else needs changing).
 const PROJECTS = [
+  // ---- Row 1: tall cards ----
   {
     slug: 'ashford-homes-ohio',
     title: 'Ashford Homes Ohio',
@@ -29,23 +31,43 @@ const PROJECTS = [
       ['Homes For Sale', 'homes-for-sale']
     ]
   },
-  /* HIDDEN FOR NOW: still in staging. Remove the comment marks around this block to show it again.
   {
-    slug: 'golden-boy-branding',
-    title: 'Golden Boy Branding',
-    category: 'Business website',
-    build: 'Figma to WordPress (Elementor)',
-    url: 'https://staging-3067-huntore4ab5f5721-sfnrt.wpcomstaging.com/services/promotional-products/',
+    slug: 'longview-commercial',
+    title: 'Longview Commercial',
+    category: 'Commercial real estate',
+    build: '',
+    url: 'https://longviewcommercial.com',
     pages: [
-      ['Promotional Products', 'promotional-products'],
-      ['Embroidery', 'embroidery'],
-      ['Our Process', 'our-process'],
-      ['Trade Show Materials', 'trade-show-materials'],
-      ['Location Landing Page', 'location-landing-page'],
-      ['Locations Single Pages Sample', 'location-single-pages-sample']
+      ['Market Intelligence', 'market-intelligence'],
+      ['Market Intelligence Short Report (Template)', 'market-intelligence-short-report-template'],
+      ['Request Investor Access', 'request-investor-access'],
+      ['Full Report Template', 'full-report-template'],
+      ['Legal Disclaimer', 'legal-disclaimer'],
+      ['Privacy Policy', 'privacy-policy'],
+      ['Terms of Use', 'terms-of-use'],
+      ['Cookie Policy', 'cookie-policy'],
+      ['International Policy', 'international-policy']
     ]
   },
-  */
+  {
+    slug: 'buzz-a-geek',
+    title: 'Buzz A Geek',
+    category: 'IT services',
+    build: '',
+    url: 'https://www.buzzageek.com.au/',
+    pages: [
+      ['Cybersecurity', 'cybersecurity'],
+      ['Managed IT Services', 'managed-it-services'],
+      ['Office 365 Support', 'office-365-support'],
+      ['Data Recovery', 'data-recovery'],
+      ['IT Asset Recovery and Disposal', 'it-asset-recovery-and-disposal'],
+      ['Small Business VoIP', 'small-business-voip'],
+      ['Blog Page', 'blog-page'],
+      ['Download Page', 'download-page'],
+      ['FAQ Page', 'faq-page']
+    ]
+  },
+  // ---- Row 2: tall cards ----
   {
     slug: 'baker-it',
     title: 'Baker IT',
@@ -59,6 +81,44 @@ const PROJECTS = [
       ['Sitemap', 'sitemap']
     ]
   },
+  {
+    slug: 'wdw-radio',
+    title: 'WDW Radio',
+    category: 'Business website',
+    build: 'Direct Dev WordPress (Elementor)',
+    url: 'https://www.wdwradio.com/shop/',
+    pages: [
+      ['Shop', 'shop'],
+      ['WDW Radio Nation', 'wdw-radio-nation'],
+      ['Start Here', 'start-here'],
+      ['Press Media', 'press-media'],
+      ['Haunts and Heroes Hotel Request Form', 'haunts-and-heroes-hotel-request-form']
+    ]
+  },
+  {
+    slug: 'dd-law-stage',
+    title: 'DD Law Stage',
+    category: 'Law firm',
+    build: 'Figma to WordPress (DIVI)',
+    url: 'https://ddlawstage.wpenginepowered.com/langley-lawyers-help/',
+    pages: [
+      ['Lawyer Help', 'lawyer-help'],
+      ['Criminal Lawyer Surrey', 'criminal-lawyer-surrey'],
+      ['Immigration Lawyers in Surrey', 'immigration-lawyers-in-surrey']
+    ]
+  },
+  {
+    slug: 'qfilmz',
+    title: 'QFilmz',
+    category: 'Video production',
+    build: 'Figma to WordPress (Elementor)',
+    url: 'https://qfilmz.com/blog/',
+    pages: [
+      ['Blog Page', 'blog-page'],
+      ['Single Blog Page (Template)', 'single-blog-page-template']
+    ]
+  },
+  // ---- Row 3: short cards (one page each) ----
   {
     slug: 'staying-dangerous',
     title: 'Staying Dangerous',
@@ -81,32 +141,6 @@ const PROJECTS = [
     ]
   },
   {
-    slug: 'dd-law-stage',
-    title: 'DD Law Stage',
-    category: 'Law firm',
-    build: 'Figma to WordPress (DIVI)',
-    url: 'https://ddlawstage.wpenginepowered.com/langley-lawyers-help/',
-    pages: [
-      ['Lawyer Help', 'lawyer-help'],
-      ['Criminal Lawyer Surrey', 'criminal-lawyer-surrey'],
-      ['Immigration Lawyers in Surrey', 'immigration-lawyers-in-surrey']
-    ]
-  },
-  {
-    slug: 'wdw-radio',
-    title: 'WDW Radio',
-    category: 'Business website',
-    build: 'Direct Dev WordPress (Elementor)',
-    url: 'https://www.wdwradio.com/shop/',
-    pages: [
-      ['Shop', 'shop'],
-      ['WDW Radio Nation', 'wdw-radio-nation'],
-      ['Start Here', 'start-here'],
-      ['Press Media', 'press-media'],
-      ['Haunts and Heroes Hotel Request Form', 'haunts-and-heroes-hotel-request-form']
-    ]
-  },
-  {
     slug: 'open-bright-nyc',
     title: 'Open Bright NYC',
     category: 'Dental practice',
@@ -115,34 +149,42 @@ const PROJECTS = [
     pages: [
       ['Pediatric Dentist Bronx NY', 'pediatric-dentist-bronx-ny']
     ]
-  },
-  {
-    slug: 'qfilmz',
-    title: 'QFilmz',
-    category: 'Video production',
+  }
+  /* HIDDEN FOR NOW: Golden Boy Branding is still in staging. To show it again, move this block
+     into the list above (without the comment marks), in a row with similar cards.
+  ,{
+    slug: 'golden-boy-branding',
+    title: 'Golden Boy Branding',
+    category: 'Business website',
     build: 'Figma to WordPress (Elementor)',
-    url: 'https://qfilmz.com/blog/',
+    url: 'https://staging-3067-huntore4ab5f5721-sfnrt.wpcomstaging.com/services/promotional-products/',
     pages: [
-      ['Blog Page', 'blog-page'],
-      ['Single Blog Page (Template)', 'single-blog-page-template']
+      ['Promotional Products', 'promotional-products'],
+      ['Embroidery', 'embroidery'],
+      ['Our Process', 'our-process'],
+      ['Trade Show Materials', 'trade-show-materials'],
+      ['Location Landing Page', 'location-landing-page'],
+      ['Locations Single Pages Sample', 'location-single-pages-sample']
     ]
   }
+  */
 ];
 
-// Pages shown in the slanted grid: [project number, page number], counting from 0.
-// Project numbers (Golden Boy hidden): 0 Ashford, 1 J&K, 2 Baker IT, 3 Staying Dangerous,
-// 4 Avenir, 5 DD Law Stage, 6 WDW Radio, 7 Open Bright NYC, 8 QFilmz
+// Pages shown in the slanted grid: [project name, page name], taken from the slugs above.
+// Because it uses names, reordering or hiding projects never breaks it.
 const TILTED = [
-  [0, 0],   // Ashford Homes Ohio: Homepage
-  [1, 0],   // J&K Custom Homes: Homepage
-  [8, 0],   // QFilmz: Blog Page
-  [2, 0],   // Baker IT: Homepage
-  [3, 0],   // Staying Dangerous: Skill Soft
-  [4, 0]    // Avenir: Our Project
+  ['ashford-homes-ohio', 'homepage'],
+  ['jk-custom-homes', 'homepage'],
+  ['qfilmz', 'blog-page'],
+  ['baker-it', 'homepage'],
+  ['staying-dangerous', 'skill-soft'],
+  ['avenir', 'our-project']
   // Not shown for now:
-  // [7, 0],   // Open Bright NYC: Pediatric Dentist Bronx NY
-  // [6, 0],   // WDW Radio: Shop
-  // [5, 0],   // DD Law Stage: Lawyer Help
+  // ['longview-commercial', 'market-intelligence'],
+  // ['buzz-a-geek', 'cybersecurity'],
+  // ['wdw-radio', 'shop'],
+  // ['dd-law-stage', 'lawyer-help'],
+  // ['open-bright-nyc', 'pediatric-dentist-bronx-ny'],
 ];
 
 const PAGE_SIZE = 4, SCROLL_AFTER = 12, EXTS = ['jpg', 'jpeg', 'png', 'webp'];
@@ -179,9 +221,12 @@ function shot(p, pg, dev) {
 // Slanted page grid
 const tilt = $('#tiltGrid');
 
-TILTED.forEach(([pi, gi]) => {
-  const p = PROJECTS[pi], pg = p && p.pages[gi];
-  if (!pg) return;   // a wrong number skips that card instead of breaking the site
+TILTED.forEach(([slug, page]) => {
+  const pi = PROJECTS.findIndex(x => x.slug === slug);
+  const p = PROJECTS[pi];
+  const gi = p ? p.pages.findIndex(g => g[1] === page) : -1;
+  if (!p || gi < 0) return;   // a wrong or hidden name skips that card instead of breaking the site
+  const pg = p.pages[gi];
   const b = document.createElement('button');
 
   b.className = 'tilt-card';
@@ -237,8 +282,8 @@ PROJECTS.forEach((p, pi) => {
   grid.append(col);
 });
 
-// Placeholder cards
-const PLACEHOLDER_SLOTS = 12;
+// Placeholder cards (0 = none; set to 12 to fill empty slots with faint "coming soon" cards)
+const PLACEHOLDER_SLOTS = 0;
 
 for (let i = PROJECTS.length; i < PLACEHOLDER_SLOTS; i++) {
   const col = document.createElement('div');
