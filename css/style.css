@@ -163,7 +163,7 @@ section { position: relative; padding: 6.5rem 0; overflow: hidden }
 .v-dev button { background: none; border: 0; color: var(--mist); border-radius: 99px; padding: .25rem .9rem; font-size: .85rem }
 .v-dev button.on { background: var(--cream); color: var(--ink) }
 .v-x { background: none; border: 0; color: var(--cream); font-size: 1.9rem; line-height: 1 }
-.v-tabs { display: flex; gap: .4rem; padding: .4rem 1.25rem; overflow-x: auto }
+.v-tabs { display: flex; flex-wrap: wrap; gap: .5rem; padding: 1.1rem 1.25rem .4rem }
 .v-tabs button { white-space: nowrap; background: none; color: var(--mist); border: 1px solid var(--slate); border-radius: 99px; padding: .25rem .9rem; font-size: .9rem }
 .v-tabs button.on { background: var(--slate); color: #fff }
 .v-screen { margin: .5rem 1.25rem 1.25rem; height: 68vh; overflow-y: auto; background: #222836; border-radius: 12px }
