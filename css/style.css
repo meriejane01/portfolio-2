@@ -238,7 +238,7 @@ html[data-theme=light] .sun, html:not([data-theme=light]) .moon { color: #12151D
 
 /* build type next to the project title */
 .v-build { margin-left: auto; font-size: .85rem; font-weight: 500; color: var(--mist); border: 1px solid var(--slate); border-radius: 99px; padding: .35rem .9rem; white-space: nowrap }
-.v-build + .v-dev { margin-left: 0 }
+.v-build:not(:empty) + .v-dev { margin-left: 0 }
 .v-build:empty { display: none }
 @media (max-width: 575.98px) {
   .v-head { flex-wrap: wrap }
