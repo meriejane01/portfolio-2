@@ -141,6 +141,16 @@ const PROJECTS = [
       ['Our Project', 'our-project']
     ]
   },
+    {
+    slug: 'page-speed-optimized',
+    title: 'Page Speed Optimized',
+    category: 'Business website',
+    build: '',
+    url: 'https://pagespeedoptimized.io/about/',
+    pages: [
+      ['About Page', 'about']
+    ]
+  },
   {
     slug: 'open-bright-nyc',
     title: 'Open Bright NYC',
