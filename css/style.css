@@ -232,7 +232,7 @@ html[data-theme=light] .sun, html:not([data-theme=light]) .moon { color: #12151D
 /* 12. Reduced motion ------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   /* stop only the constant looping motion; keep the gentle hover transitions */
-  .pulse, .chip, .orb, .hero-roll { animation: none !important }
+  .pulse, .orb { animation: none !important }
   html { scroll-behavior: auto }
 }
 
