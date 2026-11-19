@@ -54,7 +54,7 @@ const PROJECTS = [
     slug: 'buzz-a-geek',
     title: 'Buzz A Geek',
     category: 'IT services',
-    build: '',
+    build: 'Figma to WordPress (Elementor)',
     url: 'https://www.buzzageek.com.au/',
     pages: [
       ['Cybersecurity', 'cybersecurity'],
@@ -85,7 +85,7 @@ const PROJECTS = [
   {
     slug: 'wdw-radio',
     title: 'WDW Radio',
-    category: 'Business website',
+    category: 'Podcast website',
     build: 'Direct Dev WordPress (Elementor)',
     url: 'https://www.wdwradio.com/shop/',
     pages: [
@@ -145,7 +145,7 @@ const PROJECTS = [
     slug: 'page-speed-optimized',
     title: 'Page Speed Optimized',
     category: 'Business website',
-    build: '',
+    build: 'Figma to WordPress (Elementor)',
     url: 'https://pagespeedoptimized.io/about/',
     pages: [
       ['About Page', 'about']
