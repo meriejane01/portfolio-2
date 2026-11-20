@@ -594,3 +594,20 @@ const heroRoll = $('#heroRoll'), heroView = $('#heroView');
 
   targets.forEach(t => { t.classList.add('reveal'); io.observe(t); });
 })();
+
+// Falling sakura petals: soft, low opacity, and they never block clicks
+(function () {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const layer = document.createElement('div');
+  layer.className = 'petals';
+  layer.setAttribute('aria-hidden', 'true');
+  const N = innerWidth < 600 ? 9 : 16;
+  for (let i = 0; i < N; i++) {
+    const p = document.createElement('span');
+    p.className = 'petal';
+    const s = 9 + Math.random() * 11;
+    p.style.cssText = `--l:${Math.random() * 100}%;--s:${s}px;--d:${14 + Math.random() * 14}s;--w:${4 + Math.random() * 4}s;--del:${-Math.random() * 26}s;--o:${0.22 + Math.random() * 0.22}`;
+    layer.append(p);
+  }
+  document.body.append(layer);
+})();
