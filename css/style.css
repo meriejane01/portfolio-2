@@ -309,15 +309,15 @@ html:not([data-theme=light]) .btn-cream svg { background: #2B2B30; color: #fff }
   .hero::after, .pages::after, .services::after, .work::after, .closing::after { animation: none }
 }
 
-/* 16. Sakura branch in the hero and falling petals ------------ */
-.sakura { position: absolute; top: 0; right: 0; width: min(48vw, 580px); pointer-events: none; z-index: 0 }
-.sakura svg { display: block; width: 100%; height: auto; transform-origin: 100% 0; animation: sakura-sway 9s ease-in-out infinite alternate }
-@keyframes sakura-sway { from { transform: rotate(-1.4deg) } to { transform: rotate(1.4deg) } }
+/* 16. Sakura branch in the hero, swaying in the wind ------------ */
+.sakura { position: absolute; top: 0; right: 0; width: min(48vw, 580px); pointer-events: none; z-index: 0; animation: gust 11s ease-in-out infinite alternate }
+.sakura svg { display: block; width: 100%; height: auto; transform-origin: 100% 0; animation: sakura-sway 7.5s ease-in-out infinite alternate; will-change: transform }
+@keyframes gust { from { transform: translateX(-4px) } to { transform: translateX(8px) } }
+@keyframes sakura-sway { from { transform: rotate(-1.8deg) } to { transform: rotate(2.2deg) } }
+/* each blossom flutters a little on its own, so the whole tree feels alive */
+.fl { transform-box: fill-box; transform-origin: 50% 60%; animation: flutter 4.8s ease-in-out infinite alternate }
+.fl:nth-of-type(3n+1) { animation-duration: 5.6s; animation-delay: -1.2s }
+.fl:nth-of-type(3n+2) { animation-duration: 6.4s; animation-delay: -3.1s }
+.fl:nth-of-type(3n) { animation-duration: 4.4s; animation-delay: -.6s }
+@keyframes flutter { from { transform: rotate(-7deg) scale(.97) } to { transform: rotate(8deg) scale(1.04) } }
 @media (max-width: 575.98px) { .sakura { width: 82vw; opacity: .6 } }
-
-.petals { position: fixed; inset: 0; z-index: 5; pointer-events: none; overflow: hidden }
-.petal { position: absolute; top: -30px; left: var(--l); width: var(--s); height: calc(var(--s) * 1.25); background: linear-gradient(135deg, #F8D0DC, #EE9DB8); border-radius: 150% 0 150% 0; opacity: var(--o);
-  animation: petal-fall var(--d) linear var(--del) infinite, petal-sway var(--w) ease-in-out var(--del) infinite alternate }
-@keyframes petal-fall { to { translate: 0 calc(100vh + 60px) } }
-@keyframes petal-sway { from { transform: translateX(-26px) rotate(-30deg) } to { transform: translateX(34px) rotate(160deg) } }
-@media (prefers-reduced-motion: reduce) { .sakura svg { animation: none } }
