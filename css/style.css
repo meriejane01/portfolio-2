@@ -321,3 +321,7 @@ html:not([data-theme=light]) .btn-cream svg { background: #2B2B30; color: #fff }
 .fl:nth-of-type(3n) { animation-duration: 4.4s; animation-delay: -.6s }
 @keyframes flutter { from { transform: rotate(-7deg) scale(.97) } to { transform: rotate(8deg) scale(1.04) } }
 @media (max-width: 575.98px) { .sakura { width: 82vw; opacity: .6 } }
+
+/* 17. Blossom in the status pills ------------------------------ */
+.bl { width: 16px; height: 16px; flex: none; animation: bl-spin 9s linear infinite }
+@keyframes bl-spin { to { transform: rotate(360deg) } }
