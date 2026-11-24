@@ -484,6 +484,8 @@ form.addEventListener('submit', async e => {
   if (form.website.value) return;
 
   const data = new FormData(form);
+  data.set('need', data.getAll('need').join(', '));
+  data.set('_subject', 'New project inquiry from ' + data.get('name'));
   const ep = form.dataset.endpoint;
 
   if (ep.includes('YOUR_FORM_ID')) {
