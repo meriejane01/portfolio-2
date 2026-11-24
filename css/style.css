@@ -76,7 +76,7 @@ section { position: relative; padding: 6.5rem 0; overflow: hidden }
 
 /* floating chips */
 .chip { position: absolute; z-index: 2; background: #fff; color: #2B2B30; border: 1px solid #E8D6D8; padding: .4rem .9rem; border-radius: 99px; font-weight: 600; font-size: .85rem; box-shadow: 0 10px 24px -12px rgba(43, 43, 48, .35); animation: bob 6s ease-in-out infinite }
-.c1 { left: -2%; top: 6%; background: var(--rose); border-color: var(--rose) }
+.c1 { left: -2%; top: 6% }
 .c2 { right: 0; top: 20%; animation-delay: -2s }
 .c3 { right: 6%; bottom: 6%; animation-delay: -4s }
 @keyframes bob { 50% { transform: translateY(-9px) } }
